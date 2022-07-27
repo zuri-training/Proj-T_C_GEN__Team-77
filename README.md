@@ -4,4 +4,4 @@ I create basic information, including setting up dependencies, creating project,
 
 Also, i installed django-extensions and python-decouple.
 
-I generated the secret key using python manage.py generate_secret_key andi hid the secret key using python decouple
+I generated the secret key using python manage.py generate_secret_key and i hid the secret key using python decouple
