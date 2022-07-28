@@ -105,12 +105,12 @@ For team_77 members, follow the following steps to collaborate:
 
 2. Fork the repository: Click the "Fork" button on the upper right corner of the Repo page.*
 3. Make a local clone: 
-     Click on the "Code" button on the Repo page
-     Copy the URL for the forked Repo "https://github.com/zuri-training/Proj-T_C_GEN__Team-77.git"
-     Create a Folder on your Local machine / Computer for the project Workspace
-     Open Command prompt / Terminal in the same folder location
+     Click on the "Code" button on the Repo page <br/>
+     Copy the URL for the forked Repo "https://github.com/zuri-training/Proj-T_C_GEN__Team-77.git" <br/>
+     Create a Folder on your Local machine / Computer for the project Workspace <br/>
+     Open Command prompt / Terminal in the same folder location <br/>
      In your Terminal, type: <br/>
-        `git clone https://github.com/github_username/proj_debtors-team-36.git`
+        `git clone https://github.com/github_username/proj-T C GEN Team-77.git`
 4. Open terminal and set upstream branch: <br/>
     `git remote add upstream https://github.com/zuri-training/proj_debtors-team-36`
 5. Pull upstream to get up to date with the original repo:<br/>
