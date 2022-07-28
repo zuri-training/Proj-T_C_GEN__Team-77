@@ -3,7 +3,7 @@
 ## Background
 This is a platform that allows Users generate Terms and condition, as well as privacy policies suitable for  them. -Team 77
 =======
-The Contributors created basic informations, including setting up dependencies, creating project, app and working directory.
+The Contributors created basic pieces of information, including setting up dependencies, creating project, app and working directory.
 
 ## Table of Contents
 
