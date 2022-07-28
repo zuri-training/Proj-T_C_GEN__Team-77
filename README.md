@@ -1,10 +1,15 @@
 # Proj-T_C_GEN__Team-77
 
+<<<<<<< HEAD
 ## Background
 This is a platform that allows Users generate Terms and condition, as well as privacy policies suitable for their them. -Team 77
+=======
+I created basic information, including setting up dependencies, creating project, app and working directory.
+>>>>>>> 2c8c88281e8cb62b792c45f4fc3d1ff50165b5e2
 
 ## Table of Contents
 
+<<<<<<< HEAD
 * [Background](#background)
 * [About the Project](#about-the-project)
 * [Technologies Used](#technologies-used)
@@ -221,3 +226,6 @@ A more detailed documentation on the updates and details of this project can be 
 
 This project is acknowlegded to Zuri Team for creating this organization and bringing about this project.
 Special thanks to the sponsors too.
+=======
+I generated the secret key using python manage.py generate_secret_key and i hid the secret key using python decouple
+>>>>>>> 2c8c88281e8cb62b792c45f4fc3d1ff50165b5e2
