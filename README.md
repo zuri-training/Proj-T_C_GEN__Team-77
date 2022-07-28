@@ -9,7 +9,7 @@ I created basic information, including setting up dependencies, creating project
 
 ## Table of Contents
 
-<<<<<<< HEAD
+
 * [Background](#background)
 * [About the Project](#about-the-project)
 * [Technologies Used](#technologies-used)
@@ -24,7 +24,9 @@ I created basic information, including setting up dependencies, creating project
 ## About the Project
 
 * Terms77 is a website that allows users generate clear and concise terms & condition and privacy conditions suitable for all. 
+
 * This project was created to solve the need for the terms and conditions to be easy for an average user to read and comprehend. The lack of uncertainty of users about the usage of their data will not allow them to consent, hence the need for a clear and concise privacy policy.
+
 * This project is solely aimed at solving Legal liabilities that may arise because a user of a product isn't aware or did not agree to the conditions of use of the particular product.
 
 ## Technologies Used
@@ -53,13 +55,15 @@ This project was created with ![Visual Studio Code](https://img.shields.io/badge
 ## Features
 
 __Unauthenticated users__ - An individual that has not registered to the website would be able to;
+
     Visit the platform to view basic information about it
     View and Interact with the documentation
     Register to view more detailswould be able
     No access to use until registered
 
 
- * The website Home page (Landing page). This page will contain: <br/>
+ * The website Home page (Landing page). This page will contain:
+ 
        - A Hero section with a CTA to Login or Create Account
        - About Us section
        - FAQs section
@@ -226,6 +230,5 @@ A more detailed documentation on the updates and details of this project can be 
 
 This project is acknowlegded to Zuri Team for creating this organization and bringing about this project.
 Special thanks to the sponsors too.
-=======
-I generated the secret key using python manage.py generate_secret_key and i hid the secret key using python decouple
->>>>>>> 2c8c88281e8cb62b792c45f4fc3d1ff50165b5e2
+
+The contributors generated the secret key using python manage.py generate_secret_key and  hid the secret key using python decouple
