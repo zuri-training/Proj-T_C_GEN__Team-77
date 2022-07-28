@@ -1,11 +1,9 @@
 # Proj-T_C_GEN__Team-77
 
-<<<<<<< HEAD
 ## Background
-This is a platform that allows Users generate Terms and condition, as well as privacy policies suitable for their them. -Team 77
+This is a platform that allows Users generate Terms and condition, as well as privacy policies suitable for  them. -Team 77
 =======
-I created basic information, including setting up dependencies, creating project, app and working directory.
->>>>>>> 2c8c88281e8cb62b792c45f4fc3d1ff50165b5e2
+The Contributors created basic informations, including setting up dependencies, creating project, app and working directory.
 
 ## Table of Contents
 
