@@ -153,7 +153,7 @@ __Olawale Ayoola__
 
 __Okanlawon Toba__
 * Github- https://github.com/OfficialOkanlawon
-* Track - Product Design
+* Track - Fullstack 
 
 __Jonathan Abah__
 * Github- https://github.com/jonathanabah
