@@ -17,7 +17,7 @@ The Contributors created basic pieces of information, including setting up depen
 * [Project Status](#project-status)
 * [Collaboration](#collaboration)
 * [Contributors](#contributors)
-* [Documentation](#documentation)
+* [Relevant Links](#relevant-links)
 * [Acknowledgements](#acknowledgements)
 ## About the Project
 
@@ -87,15 +87,12 @@ __Authenticated Users__ - A user that has fully registered and has completed all
 ## Usage
  * Visit the website
  * Surf through basic infromation
- * Sign up
- * Fill registration details
- * Verify email address
- * Proceed to KYC verification
- * Submit required verification documents
- * Get verified
+ * Enter details on the sign up page to register
+ * Proceed to sign in page after authentification
  * Log in
- * Edit profile
+ * Edit account settings
  * Full CRUD priviledge
+
 ## Project Status
 Project is : *in progress*
 
@@ -221,8 +218,12 @@ __Sangodare Sheriff__
 
 
 
-## Documentation
-A more detailed documentation on the updates and details of this project can be found here - "documentationLinkWhenReady"
+## Relevant Links
+* Figma Designs - https://www.figma.com/file/6yoI3SiBYMV9IKHClcKfaR/Terms77?node-id=122%3A97
+* General Team Documentation - https://docs.google.com/document/d/1rNTk2hPVpmEwFQ72HfpOX5MCvWxmNBBi-nhNH__ty3M/edit?usp=sharing
+* UX Research Documentation - https://docs.google.com/document/d/1hQmG6QUE6AhD26mdjcpxKYfhmF5aPH0T7TcFCUvmVUo/edit?usp=sharing
+* Contributors Details and Tasks - https://docs.google.com/spreadsheets/d/1jy5eBHxAlEFR83tw7ZPI8p9LHv-5oEpz8sIjo--eKfc/edit?usp=sharing
+* Database Schema - https://dbdesigner.page.link/8LKnseX6uZEGQ5GK8
 
 ## Acknowledgements
 
