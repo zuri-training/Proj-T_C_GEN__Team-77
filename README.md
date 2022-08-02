@@ -28,7 +28,7 @@ The Contributors created basic pieces of information, including setting up depen
 * This project is solely aimed at solving Legal liabilities that may arise because a user of a product isn't aware or did not agree to the conditions of use of the particular product.
 
 ## Technologies Used
-This project was created with ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) and the following technologies were used: <br/>
+This project is being created with ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) and the following technologies were used: <br/>
 * __Design__<br/>
         ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
@@ -107,9 +107,9 @@ For team_77 members, follow the following steps to collaborate:
      Create a Folder on your Local machine / Computer for the project Workspace <br/>
      Open Command prompt / Terminal in the same folder location <br/>
      In your Terminal, type: <br/>
-        `git clone https://github.com/github_username/proj-T C GEN Team-77.git`
+        `git clone https://github.com/github_username/proj-T_C_GEN__Team-77.git`
 4. Open terminal and set upstream branch: <br/>
-    `git remote add upstream https://github.com/zuri-training/proj_debtors-team-36`
+    `git remote add upstream https://github.com/zuri-training/Proj-T_C__GEN Team-77`
 5. Pull upstream to get up to date with the original repo:<br/>
     `git pull upstream main`
 6. Create a new branch for the task you are working on :<br/>
@@ -230,4 +230,4 @@ __Sangodare Sheriff__
 This project is acknowlegded to Zuri Team for creating this organization and bringing about this project.
 Special thanks to the sponsors too.
 
-The contributors generated the secret key using python manage.py generate_secret_key and  hid the secret key using python decouple
+The contributors generated the secret key using python manage.py generate_secret_key and  hid the secret key using python decouple.
