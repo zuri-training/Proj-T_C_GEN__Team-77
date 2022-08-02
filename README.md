@@ -107,7 +107,7 @@ For team_77 members, follow the following steps to collaborate:
      Create a Folder on your Local machine / Computer for the project Workspace <br/>
      Open Command prompt / Terminal in the same folder location <br/>
      In your Terminal, type: <br/>
-        `git clone https://github.com/github_username/proj-T_C_GEN__Team-77.git`
+        `git clone https://github.com/github_username/Proj-T_C_GEN__Team-77.git`
 4. Open terminal and set upstream branch: <br/>
     `git remote add upstream https://github.com/zuri-training/Proj-T_C_GEN__Team-77`
 5. Pull upstream to get up to date with the original repo:<br/>
