@@ -1,18 +1,303 @@
-{% extends 'base.html' %}
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static './terms77/landing.css' %}" type="text/css">
+    <title>{% block title %} Landing {% endblock title %}</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light navbar-light mb-5">
+    <div class="container">
+      <a class="navbar-brand" href=""><img src="{% static 'terms77/img/logo.jpg' %}" class="p-2" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+        
+        <div class="navbar-nav" style="margin: auto;">
+            <a class="nav-link mx-2" aria-current="page" href="#">About us</a>
+          <a class="nav-link mx-2" href="#">Templates</a>
+          <a class="nav-link mx-2" href="#">Contact us</a>
+        </div>
+        <div class="d-flex">
 
-{% block title %}Home{% endblock %}
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.username }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                        
+                        <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                    </ul>
+                    </div>
+                
+                    {% else %}
+                    <form class="form-inline ml-auto">
+                        <div class="container">
+                            {% if user.is_authenticated %}
+                              <p><a href="{% url 'logout' %}">logout</a></p>
+                              
+                          {% else %}
+                              <a href="{% url 'login' %}" class="btn">login</a>
+                              <a href="{% url 'signup' %}" class="btn text-light" style="background-color: var(--footer_color)">signup</a>
+                          {% endif %}
+                          </div>
+                        
+                    </form>
+                    {% endif %}
+                    
+            </div>
 
-{% block content %}
-{% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <h1>This is the home page</h1>
-    <p><a href="{% url 'logout' %}">logout</a></p>
     
-{% else %}
-    <p>You are not logged in!</p>
-    <a href="{% url 'login' %}">login</a> |
-    <a href="{% url 'signup' %}">signup</a>
-{% endif %}
-{% endblock %}
+        </div>
+      </div>
+      
+    </div>
+  </nav>
+  
+    <main>
+      <section class="m-3 p-4">
+        <div class="container text-center my-5">
+            <div class="text-bold mx-auto">
+            <h3 class="fw-bolder">Generate fast and well</h3>
+              <h3 class="fw-bolder"> written T&Cs</h3>
+            </div>
+            <div class="text-wrap mx-auto">
+            <p>Our Terms and Conditions templates are easy to use, you can capture your 
+              business' legal agreement at a glance</p>
+            </div>
+            <button class="btn col-lg-3 btn-lg m-auto text-light text-center button1 link-info" style="background-color: var(--footer_color)"> Get Started</button>
+        </div>
+        <div class="row p-2">
+          <div class="col-sm-12 col-md-12 col-lg-6 px-5">
+            <img src="{% static 'terms77/img/Left.jpg' %}" alt="" class="right">
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6 px-5">
+            <img src="{%static 'terms77/img/Right.jpg' %}" alt="" class="left">
+          </div>
+        </div>
 
+        <div class="container-fluid" style="background-color: var(--footer_color)">co</div>
+        <div class="container-fluid" style="background-color: var(--footer_color)">co</div>
+      </section>
+
+      <section class="mx-3 my-5 p-4 section1">
+        <div class="container">
+          <div class="text-wrap text-bold mx-auto my-5 text-center">
+          <h3 class="fw-bolder">Everything you need and </h3>
+            <h3 class="fw-bolder">more</h3>
+          </div>
+          <div class="row mb-5">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+              <button class="btn btn-lg col-lg-9 my-3 justify-content-left text-light link-info" style="background-color: var(--footer_color)">Terms and conditions</button>
+              <br>
+              <button class="btn btn-lg col-lg-6 my-3 opacity-25 justify-content-start text-light link-info" style="background-color: var(--footer_color)">Privacy Policy</button>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6">
+              <p>Terms and Conditions is a legal agreement between a service and a person that wantts to use that service. Our geneator can help you clear all your doubts with no hassle.</p>
+              <button class="btn btn-lg m-auto text-light text-center link-info button1" style="background-color: var(--footer_color)">Get started</button>
+            </div>
+
+          </div>
+      </div>
+      <div class="container mx-auto my-5 p-4">
+        <div class="text-wrap text-bold mx-auto mb-5 text-center">
+        <h3 class="fw-bolder">Benefits of using Terms77</h3>
+        </div>
+        <div class="row gx-4 m-auto">
+          <div class="col-sm-12 col-lg-3 col-md-9 m-auto text-center text-light mt-3 benefits">
+            
+             
+          <div class="my-3"><i class="bi bi-shield-lock"></i></div>
+            <h4>Safe and Secure</h4>
+          <p>We're always looking for regulations around the world in order to create the best and recent policies for you business.</p>
+          </div>
+          <div class="col-md-9 col-sm-12 col-lg-3 m-auto text-center text-white mt-3 benefits">
+            <div class="my-3">
+            <i class="bi bi-arrow-repeat"></i></div>
+            <h4>Update</h4>
+            
+          <p>We are constantly working to improve your experience on Terms77, and when we do, we'll let you know about it.</p>
+          </div>
+          <div class="col-md-9 col-sm-12 col-lg-3 m-auto text-center text-light mt-3 benefits">
+            
+          <div class="my-3"><i class="bi bi-book-half"></i></div>
+            <h4>Easy to use</h4>
+          <p>Terms77 is an easy to use platform that lets you edit, monitor and enforce your policy settings in minutes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-3 p-3">
+        <div class="container p-3 mx-auto my-5 border-0">
+          <div class="text-bold fw-bolder mx-auto text-center">
+          <h3 class="fw-bolder">How it works</h3>
+          </div>
+
+          <div class="row m-auto g-5 justify-content-between">
+
+            <div class="col-sm-12 col-lg-6 col-md-12 steps step1">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-6">
+
+                  <h4 class="fw-bolder">Step 1</h4>
+                <p>Enter your website name and the URL to the website. example(www.buymenow.com)</p>
+              </div>
+                <div class="col-md-12 col-sm-12 col-lg-6">
+                  <img src="{% static 'terms77/img/pic_3.jpg' %}" alt="" class="picture">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-5 col-md-12 offset-lg-0.1 steps">
+              <div class="row p-3 mx-auto">
+                <div class="col-md-12 col-sm-12 col-lg-6">
+                  <img src="{% static 'terms77/img/pic_4.jpg' %}" alt="" class="picture">
+              </div>
+                <div class="col-md-12 col-sm-12 col-lg-6">
+                 
+                    <h4 class="fw-bolder">Step 2</h4>
+                    <p>All you need to do is answer a handful of simple questions, and we'll generate the Term of Service for you website or app. It should take you less than 5 minutes to get it done.</p>
+            
+                </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="row m-auto g-5 justify-content-between">
+          <div class="col-sm-12 col-lg-6 col-md-12 steps step1">
+            <div class="row p-3">
+              <div class="col-md-12 col-sm-12 col-lg-6">
+                <img src="{% static 'terms77/img/pic_5.jpg' %}" class="me-2"alt="" class="picture">
+            </div>
+              <div class="col-md-12 col-sm-12 col-lg-6">
+                <div>
+                  <h4 class="fw-bolder">Step 3</h4>
+                  <p>Go through the generated template that has been created for you or use the audio option for easy access.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-lg-5 col-md-12 offset-lg-0.1 steps">
+          <div class="row p-3">
+            <div class="col-md-12 col-sm-12 col-lg-6">
+              <div><h4 class="fw-bolder">Step 4</h4>
+                <p>Click on the download your template or copy the link to share your template.</p>
+              </div>
+          </div>
+            <div class="col-md-12 col-sm-12 col-lg-6">
+              <div>
+                <img src="{% static 'terms77/img/pic_6.jpg' %}" alt="" class="picture">
+              </div>
+            </div>
+        </div>
+      </div>    
+
+    </div>
+  </div>
+      </section>
+
+      <section class="mx-auto">
+      <div class="container">
+        <div class="text-wrap text-bold mx-auto my-5 text-center">
+        <h3 class="fw-bolder">What our users have to say</h3>
+        </div>
+        <div class="row mx-auto my-5 justify-content-between">
+          <div class="col-sm-12 col-md-12 col-lg-3 my-5 text-center p-4 border">
+            <div class="row my-3">
+              <img class="col-3" src="{% static 'terms77/img/mary.png' %}" alt="">
+              <h3 class="col ms-0">Mary Jane</h3>
+            </div>
+            <div class="stars text-start"><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i></div>
+            <p class="text-start">We're always looking for regulations around the world in order to create the best and recent policies for you business.</p>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-3 my-5 text-center p-4 border">
+            <div class="row my-3">
+              <img class="col-3" src="{% static 'terms77/img/jaci.png' %}" alt="">
+              <h3 class="col ms-0">Jacinta Chris</h3>
+            </div>
+            <div class="stars text-start"><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i></div>
+            <p class="text-start">We are constantly working to improve your experience on Terms77, and when we do, we'll let you know about it.</p>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-3 my-5 text-center p-4 border">
+            <div class="row my-3">
+              <img class="col-3" src="{% static 'terms77/img/Matthew.png' %}" alt="">
+              <h3 class="col ms-0">Matthew Frank</h3>
+            </div>
+            <div class="stars text-start"><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i></div>
+            <p class="text-start">Terms77 is an easy to use platform that lets you edit, monitor and enforce your policy settings in minutes.</p>
+          </div>
+
+
+
+          
+
+        </div>
+
+      </section>
+
+      
+    </main>
+    <footer class="text-light mt-5 p-2">
+      <div class="container p-4 my-5 mx-auto">
+      <div class="row">
+        <div class="col col-lg-4 col-md-6 p-2">
+          <h5> Terms77</h5>
+          <p>
+            We are a full-service law firm that specializes in creating customized Privacy Policies and Terms & Conditions faster to keep your business safe from any legal issue.
+          </p>
+        </div>
+          <div class="col-sm-12 col-lg-2 col-md-4 p-2">
+            <div><h4>Company</h4></div>
+            <p><a class="text-light link-info" href="#"> About us</a></p>
+            <p><a class="text-light link-info" href=""> Our Terms of use</a></p>
+            <p><a class="text-light link-info" href="">Our Privacy Policy</p></a>
+          </div>  
+            <div class="col-sm-12 col-lg-2 col-md-6 p-2">
+              <div><h4>Resources</h4></div>
+              <p><a class="text-light link-info" href=""> Terms and conditions</a></p>
+              <p><a class="text-light link-info" href=""> Privacy policies</a></p>
+            </div>
+              <div class="col-sm-12 col-lg-2 col-md-5 p-2">
+                <div><h4> Help</h4></div>
+                <p><a class="text-light link-info" href=""> Contact us</a></p>
+                <p><a class="text-light link-info" href="#"> FAQs</a></p>
+              </div>
+        </div></div>
+        <hr>
+        <div class="container p-3">
+          <h6 class="text-center justify-content-center align-center">All rights reserved 2022</h6>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
