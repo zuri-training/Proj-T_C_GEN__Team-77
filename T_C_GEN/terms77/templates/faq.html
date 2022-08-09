@@ -1,0 +1,357 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms77 - Frequently Asked Questions (FAQs)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="../img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static "faq.css" />
+  </head>
+
+  <!-- body -->
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <img src="../img/terms77.jpg" alt="" class="pt-2" />
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0 px-5"
+              style="margin: auto"
+            >
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="aboutus.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html">Templates</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn me-2" type="button"><a href="signin.html" style=" text-decoration: none">Login</a></button>
+              <button 
+                class="btn me-2"
+                type="button"
+                style="background: #111f4d; color: white"
+              > <a href="signin.html" style=" text-decoration: none"> Sign up</a>
+                </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+
+    <main>
+      <!-- Section1 -->
+      <section class="first container">
+        <div class="">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 site-title mt-5">
+              <h1>How can we help you?</h1>
+
+              <div class="input-group mb-3">
+                <span
+                  class="input-group-text"
+                  id="basic-addon1"
+                  style="border-right: none; background-color: white"
+                >
+                  <i class="material-icons">
+                    <img src="../img/search.jpg" alt="" /> </i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Type keywords to find answers"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  style="
+                    padding: 1em;
+                    font-family: Inter, cursive;
+                    border-left: 0;
+                  "
+                />
+              </div>
+
+              <div style="margin-top: 16em">
+                <h2>Frequently Asked Questions (FAQs)</h2>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 banner-image">
+              <img
+                src="../img/faq.png"
+                alt="faq-img"
+                class="img-fluid"
+                height="4em"
+                style="margin-left: 1em"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section2 -->
+      <section
+        class="second accordion container"
+        id="questions"
+        style="width: 70%"
+      >
+        <div
+          class="container one"
+          style="
+            border-style: groove;
+            border-radius: 0.3em;
+            margin-top: 0;
+            margin-bottom: 1em;
+          "
+        >
+          <h5
+            data-bs-toggle="collapse"
+            data-bs-target="#multiCollapseExample1"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample1"
+            style="cursor: pointer"
+          >
+            <img src="../img/add.jpg" alt="Add image" />
+            <strong
+              >How can I download a template of Terms and Condition?</strong
+            >
+          </h5>
+          <p
+            class="collapse multi-collapse px-5"
+            id="multiCollapseExample1"
+            style="border-top-style: groove"
+          >
+            You can download a template of a Terms and Condition when you
+            register and fill in your neccessary details needed to generate a
+            template for you.
+          </p>
+        </div>
+
+        <div
+          class="container two"
+          style="border-style: groove; border-radius: 0.3em; margin-bottom: 1em"
+        >
+          <h5
+            data-bs-toggle="collapse"
+            data-bs-target="#multiCollapseExample2"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample2"
+            style="cursor: pointer"
+          >
+            <img src="../img/add.jpg" alt="Add image" />
+            <strong> Will my data be shared with third parties?</strong>
+          </h5>
+          <p
+            class="collapse multi-collapse px-5"
+            id="multiCollapseExample2"
+            style="border-top-style: groove"
+          >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
+            eaque minus. Modi quis quidem vitae aliquid eveniet recusandae,
+            dignissimos sapiente officia sit temporibus qui reprehenderit hic
+            cupiditate, quod totam eos.
+          </p>
+        </div>
+
+        <div
+          class="container three"
+          style="border-style: groove; border-radius: 0.3em; margin-bottom: 1em"
+        >
+          <h5
+            data-bs-toggle="collapse"
+            data-bs-target="#multiCollapseExample3"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample3"
+            style="cursor: pointer"
+          >
+            <img src="../img/add.jpg" alt="Add image" />
+            <strong
+              >Will I have to pay to generate templates on your website?</strong
+            >
+          </h5>
+          <p
+            class="collapse multi-collapse px-5"
+            id="multiCollapseExample3"
+            style="border-top-style: groove"
+          >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
+            repellat sint officiis laborum expedita, placeat nam quo magnam
+            dolorem repellendus itaque nihil id qui ex repudiandae voluptates!
+            Non, praesentium ratione. No
+          </p>
+        </div>
+
+        <div
+          class="container four"
+          style="border-style: groove; border-radius: 0.3em; margin-bottom: 1em"
+        >
+          <h5
+            data-bs-toggle="collapse"
+            data-bs-target="#multiCollapseExample4"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample4"
+            style="cursor: pointer"
+          >
+            <img src="../img/add.jpg" alt="Add image" />
+            <strong>Can I generate privacy policy without signing up?</strong>
+          </h5>
+          <p
+            class="collapse multi-collapse px-5"
+            id="multiCollapseExample4"
+            style="border-top-style: groove"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos dicta
+            harum ex deleniti omnis? Impedit sunt nulla aperiam voluptatem
+            consequuntur! Facilis expedita explicabo voluptates facere fuga
+            consectetur nostrum fugit placeat?
+          </p>
+        </div>
+
+        <div
+          class="container five"
+          style="border-style: groove; border-radius: 0.3em; margin-bottom: 4em"
+        >
+          <h5
+            data-bs-toggle="collapse"
+            data-bs-target="#multiCollapseExample5"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample5"
+            style="cursor: pointer"
+          >
+            <img src="../img/add.jpg" alt="Add image" />
+            <strong
+              >Are your terms and conditions, privacy policy unique to each
+              user?</strong
+            >
+          </h5>
+          <p
+            class="collapse multi-collapse px-5"
+            id="multiCollapseExample5"
+            style="border-top-style: groove"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni amet
+            delectus provident, excepturi, totam quaerat hic optio error fugiat
+            ut ad, voluptatibus tempore minima aut aspernatur tenetur molestiae
+            sit at?
+          </p>
+        </div>
+      </section>
+
+      <!-- section3 -->
+      <section
+        class="container hstack gap-3"
+        style="
+          background-color: #111f4d;
+          color: white;
+          margin-bottom: 5em;
+          border-radius: 0.3em;
+          padding: 1em;
+        "
+      >
+        <div class="container">
+          <h5>Still have questions?</h5>
+          <p>Can't find answers to your questions? Please chat our team.</p>
+        </div>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="color: #111f4d; background-color: white; margin-right: 2em"
+        >
+          Get in touch
+        </button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="container-fluid"
+      style="background-color: #111f4d; color: white"
+    >
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h5>Terms77</h5>
+            <p class="fw-lighter">
+              We are a full-service law firm that specializes in creating
+              customized Privacy Policies and Terms & Conditions faster to keep
+              your business safe from any legal issue.
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12">
+            <div class="fw-lighter lh-sm">
+              <h6>Company</h6>
+              <p><a href="aboutus.html">About us</a></p>
+              <p><a href="termsofuse.html">Our Terms of use</a></p>
+              <p><a href="ourprivacypolicy.html">Our Privacy policies</a></p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12">
+            <div class="fw-lighter lh-sm">
+              <h6>Resources</h6>
+              <p><a href="signup.html">Terms and conditions</a></p>
+              <p><a href="signup.html">Privacy policies</a></p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12">
+            <div class="fw-lighter lh-sm">
+              <h6>Help</h6>
+              <p><a href="#">Contact us</a></p>
+              <p><a href="faq.html" class="">FAQs</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12" style="border-top: 1px #959bb0 solid; width: 100%">
+          <p class="py-2">All right reserved 2022</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+
