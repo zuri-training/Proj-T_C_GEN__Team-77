@@ -1,5 +1,4 @@
 """T_C_GEN URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
@@ -15,19 +14,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic.base import TemplateView
-from django.contrib.auth import views as auth_views
+from terms77 import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    
-    path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path('terms77/', include('django.contrib.auth.urls')),
-    path('terms77/', include('terms77.urls')),
-    path('password_change/', auth_views.PasswordChangeView.as_view(template_name='password/password_change_form.html'), name='password_change'),
-    path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='password/password_change_done.html'), name='password_change_done'),
-    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password/password_reset_done.html'), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="password/password_reset_confirm.html"), name='password_reset_confirm'),
-    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='password/password_reset_complete.html'), name='password_reset_complete'),  
-    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='password/password_reset_form.html'), name='password_reset'), 
+    path("admin/", admin.site.urls),
+    path("", include("terms77.urls")),
 ]
