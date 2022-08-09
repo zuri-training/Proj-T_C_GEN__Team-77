@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static './terms77/home.css' %}" type="text/css">
-    <title>{% block title %} Landing {% endblock title %}</title>
+    <title>{% block title %} Home {% endblock title %}</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top  mb-5">
@@ -77,8 +77,12 @@
             <p>Our Terms and Conditions templates are easy to use, you can capture your 
               business' legal agreement at a glance</p>
             </div>
-            <a href="" class="btn col-lg-3 btn-lg m-auto text-light text-center button1 button2 link-info" style="background-color: var(--footer_color)"> Get Started</a>
-        </div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'dashboard' %}" class="btn col-lg-3 btn-lg m-auto text-light text-center button1 button2 link-info" style="background-color: var(--footer_color)"> Get Started</a>
+            {% else %}
+            <a href="{% url 'signup' %}" class="btn col-lg-3 btn-lg m-auto text-light text-center button1 button2 link-info" style="background-color: var(--footer_color)"> Get Started</a>
+            {% endif %}
+          </div>
         <div class="row p-2">
           <div class="col-sm-12 col-md-12 col-lg-6 px-5">
             <img src="{% static 'terms77/img/Left.jpg' %}" alt="" class="right">
@@ -100,13 +104,25 @@
           </div>
           <div class="row mb-5">
             <div class="col-sm-12 col-md-12 col-lg-6">
-              <a href="" class="btn btn-lg col-lg-9 my-3 justify-content-left text-light link-info button2" style="background-color: var(--footer_color)">Terms and conditions</a>
+              {% if user.is_authenticated %}
+              <a href="{% url 'terms' %}" class="btn btn-lg col-lg-9 my-3 justify-content-left text-light link-info button2" style="background-color: var(--footer_color)">Terms and conditions</a>
+              {% else %}
+              <a href="{% url 'signup' %}" class="btn btn-lg col-lg-9 my-3 justify-content-left text-light link-info button2" style="background-color: var(--footer_color)">Terms and conditions</a>
+              {% endif %}
               <br>
-              <a href="" class="btn btn-lg col-lg-6 my-3 justify-content-start text-light link-info button2" style="background-color: var(--footer_color)">Privacy Policy</a>
+              {% if user.is_authenticated %}
+              <a href="{% url 'privacy' %}" class="btn btn-lg col-lg-6 my-3 justify-content-start text-light link-info button2" style="background-color: var(--footer_color)">Privacy Policy</a>
+              {% else %}
+              <a href="{% url 'signup' %}" class="btn btn-lg col-lg-6 my-3 justify-content-start text-light link-info button2" style="background-color: var(--footer_color)">Privacy Policy</a>
+              {% endif %}
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
               <p>Terms and Conditions is a legal agreement between a service and a person that wantts to use that service. Our geneator can help you clear all your doubts with no hassle.</p>
-              <a href="" class="btn btn-lg m-auto text-light text-center link-info button1 button2" style="background-color: var(--footer_color)">Get started</a>
+              {% if user.is_authenticated %}
+              <a href="{% url 'dashboard' %}" class="btn btn-lg m-auto text-light text-center link-info button1 button2" style="background-color: var(--footer_color)">Get started</a>
+              {% else %}
+              <a href="{% url 'signup' %}" class="btn btn-lg m-auto text-light text-center link-info button1 button2" style="background-color: var(--footer_color)">Get started</a>
+              {% endif %}
             </div>
 
           </div>
@@ -276,7 +292,7 @@
         </div>
           <div class="col-sm-12 col-lg-2 col-md-4 p-2">
             <div><h4>Company</h4></div>
-            <p><a class="text-light link-info" href="{% url about.html%}"> About us</a></p>
+            <p><a class="text-light link-info" href=""> About us</a></p>
             <p><a class="text-light link-info" href=""> Our Terms of use</a></p>
             <p><a class="text-light link-info" href="">Our Privacy Policy</p></a>
           </div>  
@@ -288,7 +304,7 @@
               <div class="col-sm-12 col-lg-2 col-md-5 p-2">
                 <div><h4> Help</h4></div>
                 <p><a class="text-light link-info" href="#"> Contact us</a></p>
-                <p><a class="text-light link-info" href="{% url faq.html%}"> FAQs</a></p>
+                <p><a class="text-light link-info" href=""> FAQs</a></p>
               </div>
         </div></div>
         <hr>

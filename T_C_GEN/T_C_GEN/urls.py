@@ -21,7 +21,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('terms77/', include('django.contrib.auth.urls')),
     path('terms77/', include('terms77.urls')),
     path('password_change/', auth_views.PasswordChangeView.as_view(template_name='password/password_change_form.html'), name='password_change'),
