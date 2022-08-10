@@ -1,14 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="forgotpass.css">
+    <link rel="stylesheet" href="{% static 'forgotpass.css' %}">
     <title>Reset password</title>
 </head>
 <body>
-        <img src="../img/Group 34 (1)(1).jpg" alt="group 77 logo">
+        <img src="{% static 'img/Group 34 (1)(1).jpg' %}" alt="group 77 logo">
 <section id="transparent-box">
 
         <h1>Forgot your password?</h1>
@@ -21,7 +23,7 @@
         <button id="req-pass">Request password reset</button>
     </form>
         <br>
-        <a href="signin.html">Back to Login</a>
+        <a href="{% url 'signin' %}">Back to Login</a>
 
 </section>
 </body>

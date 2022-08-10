@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="edit.css">
+    <link rel="stylesheet" href="{% static 'edit.css' %}">
     <script src="https://kit.fontawesome.com/c491194143.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -13,14 +15,14 @@
         <div class="container">
             <aside>
                 <div class="top">
-                    <div class="logo"><img src="../img/TERMS77-LOGO 3.png" alt=""></div>
+                    <div class="logo"><img src="{% static 'img/TERMS77-LOGO 3.png' %}" alt=""></div>
                     <div class="close"><i class="fa-solid fa-xmark"></i></div> 
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li class="temp"><h4><a href="#">Templates</a></h4></li>
-                        <li class="set"><h4><a href="#">Settings</a></h4></li>
-                        <li class="logout"><h4><a href="#">Logout</a></h4></li>
+                        <li class="temp"><h4><a href="{% url 'dashboard' %}">Templates</a></h4></li>
+                        <li class="set"><h4><a href="{% url 'settings' %}">Settings</a></h4></li>
+                        <li class="logout"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
                     </ul>
                 </div>
             </aside>
@@ -29,7 +31,7 @@
                     <div class="bars"><i class="fa-solid fa-bars"></i></div>
                     <div class="user">
                         <div><i class="fa-regular fa-circle-user"></i></div>
-                        <div><span>thebest</span></div>  
+                        <div><span>{{user.username}}</span></div>  
                     </div>
                 </div>
                 <div class="account">
@@ -98,7 +100,7 @@
                                 <div class="inp">
                                     <label for="password">New Password</label>
                                     <br>
-                                    <input type="password" name=password" id="password">
+                                    <input type="password" name="password" id="password">
                                 </div>
                             </div>
                        </div>
@@ -109,8 +111,8 @@
                 </div>
                 <footer>
                     <div class="footer">
-                        <div><a href="#">Privacy Policy</a></div>
-                        <div><a href="#">Terms of Use</a></div>
+                        <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+                        <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
                         <div><a href="#">Disclaimer</a></div>
                     </div>
                 </footer>
@@ -118,6 +120,6 @@
         </div>
     </section>
 
-    <script src="app.js"></script>
+    <script src="{% static 'app.js' %}"></script>
 </body>
 </html>

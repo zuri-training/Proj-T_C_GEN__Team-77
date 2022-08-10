@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,34 +9,34 @@
     <title>Term77 Privacy policy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="tp.css">
+    <link rel="stylesheet" href="{% static 'tp.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <img src="../img/terms77.jpg" alt="" class="pt-2">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5" style="margin: auto;">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="aboutus.html">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup.html">Templates</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact us</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <button class="btn me-2" type="button"><a href="signin.html" style=" text-decoration: none">Login</a></button>
-            <button class="btn me-2" type="button" style="background: #111F4D; color: white;"><a href="signup.html" style="color: white; text-decoration: none; background: #111F4D;">Sign Up</a></button>
-          </form>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <img src="{% static 'images/terms77.jpg' %}" alt="" class="pt-2">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5" style="margin: auto;">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Templates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn me-2" type="button"><a href="{% url 'signin' %}" style=" text-decoration: none">Login</a></button> 
+          <button class="btn me-2" type="button" style="background: #111F4D; color: white;"><a href="{% url 'signup' %}" style="color: white; text-decoration: none; background: #111F4D;">Sign Up</a></button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <section class="container my-5 ">
       <h2 class="text-center"><b>Terms77 Terms of Use</b> </h2>
@@ -57,7 +59,7 @@
     <!-- Quick questions / Answers -->
     <main class="container">
       <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" 
-      aria-controls="multiCollapseExample1" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image"> License
+      aria-controls="multiCollapseExample1" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image"> License
     </h3>
       <div style="background-color: #FBEFEF;">
         <p  class="collapse multi-collapse px-5 pt-5" id="multiCollapseExample1">
@@ -101,7 +103,7 @@
 
       
       <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" 
-      aria-controls="multiCollapseExample2" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+      aria-controls="multiCollapseExample2" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
        Return and Refund Policy
       </h3>
       <div style="background-color: #FBEFEF;">
@@ -112,7 +114,7 @@
       </div>
 
       <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" 
-      aria-controls="multiCollapseExample3" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+      aria-controls="multiCollapseExample3" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
        Your Consent</h3>
       <div style="background-color: #FBEFEF;"> 
         <p class="collapse multi-collapse px-5 py-5" id="multiCollapseExample3">
@@ -121,7 +123,7 @@
       </div>
 
       <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" 
-      aria-controls="multiCollapseExample4" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+      aria-controls="multiCollapseExample4" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
        Links to Other Websites</h3>
       <div style="background-color: #FBEFEF;">
         <p class="collapse multi-collapse px-5 py-5" id="multiCollapseExample4">
@@ -137,7 +139,7 @@
       </div>
 
       <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" 
-      aria-controls="multiCollapseExample5" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+      aria-controls="multiCollapseExample5" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
        Cookies</h3>
       <div style="background-color: #FBEFEF;" > 
         <p class="collapse multi-collapse px-5 py-5" id="multiCollapseExample5">
@@ -151,7 +153,7 @@
       </div>
 
         <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" 
-        aria-controls="multiCollapseExample5" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+        aria-controls="multiCollapseExample5" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
          Changes To Our Terms of Service</h3>
         <div style="background-color: #FBEFEF;" > 
           <p class="collapse multi-collapse px-5 py-5" id="multiCollapseExample5">
@@ -167,7 +169,7 @@
         </div>
 
         <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-expanded="false" 
-        aria-controls="multiCollapseExample6" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+        aria-controls="multiCollapseExample6" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
          Updates to Our website</h3>
         <div style="background-color: #FBEFEF;" > 
           <p class="collapse multi-collapse px-5 py-5" id="multiCollapseExample6">
@@ -184,7 +186,7 @@
         </div>
 
         <h3 data-bs-toggle="collapse" data-bs-target="#multiCollapseExample7" aria-expanded="false" 
-      aria-controls="multiCollapseExample7" style="cursor: pointer;"><img src="../img/add.jpg" alt="Add image">
+      aria-controls="multiCollapseExample7" style="cursor: pointer;"><img src="{% static 'img/add.jpg' %}" alt="Add image">
        Third-Party Services</h3>
       <div style="background-color: #FBEFEF;">
         <p class="collapse multi-collapse px-5 py-5" id="multiCollapseExample7">
@@ -204,7 +206,7 @@
 
     
     <!-- Footer -->
-    <footer class="container-fluid" style="background-color: #111F4D; color:white">
+    <footer class="container-fluid mt-3" style="background-color: #111F4D; color:white">
       <div class="container">
         <div class="row py-5">
           <div class="col-lg-6 col-md-6 col-sm-12">
@@ -216,24 +218,24 @@
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Company</h6>
-              <p><a href="#" >About us</a></p>
-              <p><a href="termsofuse.html">Our Terms of use</a></p>
-              <p><a href="ourprivacypolicy.html">Our Privacy policies</a></p>
+              <p><a href="{% url 'aboutus' %}" style="text-decoration: none;"> About us</a></p>
+              <p><a href="{% url 'termsofuse' %}" style="text-decoration: none;">Our Terms of use</a></p>
+              <p><a href="{% url 'ourprivacypolicy' %}" style="text-decoration: none;">Our Privacy policies</a></p>
             </div>
-            
           </div>
+
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Resources</h6>
-              <p><a href="signup.html">Terms and conditions</a></p>
-              <p><a href="signup.html">Privacy policies</a></p>
+              <p><a href="{% url 'signup' %}" style="text-decoration: none;">Terms and conditions</a></p>
+              <p><a href="{% url 'signup' %}" style="text-decoration: none;">Privacy policies</a></p>
             </div>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Help</h6>
-              <p><a href="#">Contact us</a></p>
-              <p><a href="#" class="">FAQs</a></p>
+              <p><a href="#" style="text-decoration: none;">Contact us</a></p>
+              <p><a href="#" style="text-decoration: none;">FAQs</a></p>
             </div>
           </div>
         </div> 

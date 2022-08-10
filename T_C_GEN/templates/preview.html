@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +12,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="preview.css" />
+    <link rel="stylesheet" href="{% static 'preview.css' %}" />
     <title>Preview pages</title>
   </head>
   <!-- body -->
@@ -29,13 +31,13 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <img src="../img/terms77.jpg" alt="" class="pt-2" />
+          <img src="{% static 'img/terms77.jpg' %}" alt="" class="pt-2" />
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5" style="margin: auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="newterms.html">Templates</a>
+              <a class="nav-link" aria-current="page" href="{% url 'newterms' %}">Templates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
+              <a class="nav-link" href="{% url 'aboutus' %}">About us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact us</a>
@@ -64,10 +66,10 @@
         <div
           class="col-lg-6 col-md-6 col-sm-12 text-center justify-content-lg-end align-items-lg-end align-items-md-center justify-content-md-center justify-content-sm-center align-items-sm-center"
         >
-          <button class="btn"><img src="../img/listen.png" alt="Audio" /></button>
-          <button class="btn"><img src="../img/download.png" alt="Download" /></button>
-          <button class="btn"><img src="../img/share.png" alt="Share" /></button>
-          <button class="btn"><img src="../img/embed.png" alt="Embed" /></button>
+          <button class="btn"><img src="{% static 'img/listen.png %}" alt="Audio" /></button>
+          <button class="btn"><img src="{% static 'img/download.png %}" alt="Download" /></button>
+          <button class="btn"><img src="{% static 'img/share.png %}" alt="Share" /></button>
+          <button class="btn"><img src="{% static 'img/embed.png %}" alt="Embed" /></button>
         </div>
       </div>
     </div>
@@ -248,16 +250,16 @@
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Company</h6>
-              <p><a href="#">About us</a></p>
-              <p><a href="#">Our Terms of use</a></p>
-              <p><a href="#">Our Privacy policies</a></p>
+              <p><a href="{% url 'aboutus' %}">About us</a></p>
+              <p><a href="{% url 'termsofuse' %}">Our Terms of use</a></p>
+              <p><a href="{% url 'ourprivacypolicy' %}">Our Privacy policies</a></p>
             </div>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Resources</h6>
-              <p><a href="#">Terms and conditions</a></p>
-              <p><a href="#">Privacy policies</a></p>
+              <p><a href="{% url 'termsofuse' %}">Terms and conditions</a></p>
+              <p><a href="{% url 'ourprivacypolicy' %}">Privacy policies</a></p>
             </div>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12">

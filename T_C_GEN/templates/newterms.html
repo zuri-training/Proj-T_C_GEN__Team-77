@@ -1,33 +1,43 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="newterms.css">
-    <link rel="stylesheet" href="step2.html">
-    <link rel="stylesheet" href="step2.css">
-    <link rel="" href="step3.html">
-    <link rel="stylesheet" href="step3.css">
+    <link rel="stylesheet" href="{% static 'newterms.css' %}">
+    <link rel="stylesheet" href="{% url 'step2' %}">
+    <link rel="stylesheet" href="{% static 'step2.css' %}">
+    <link rel="" href="{% url 'step3' %}">
+    <link rel="stylesheet" href="{% static 'step3.css' %}">
     <script src="https://kit.fontawesome.com/c491194143.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
 
-  <!--FMANUEL-->
-  
+    <!--FMANUEL-->
+
     <section>
         <div class="container">
             <aside>
                 <div class="top">
-                    <div class="logo"><img src="../img/TERMS77-LOGO 3.png" alt=""></div>
-                    <div class="close"><i class="fa-solid fa-xmark"></i></div> 
+                    <div class="logo"><img src="{% static 'img/TERMS77-LOGO 3.png' %}" alt=""></div>
+                    <div class="close"><i class="fa-solid fa-xmark"></i></div>
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li class="temp"><h4><a href="newterms.html">Templates</a></h4></li>
-                        <li class="set"><h4><a href="settings.html">Settings</a></h4></li>
-                        <li class="logout"><h4><a href="index.html">Logout</a></h4></li>
+                        <li class="temp">
+                            <h4><a href="{% url 'newterms' %}">Templates</a></h4>
+                        </li>
+                        <li class="set">
+                            <h4><a href="{% url 'settings' %}">Settings</a></h4>
+                        </li>
+                        <li class="logout">
+                            <h4><a href="{% url 'logout' %}">Logout</a></h4>
+                        </li>
                     </ul>
                 </div>
             </aside>
@@ -36,137 +46,138 @@
                     <div class="bars"><i class="fa-solid fa-bars"></i></div>
                     <div class="user">
                         <div><i class="fa-regular fa-circle-user"></i></div>
-                        <div><span>thebest</span></div>  
+                        <div><span>{{user.username}}</span></div>
                     </div>
                 </div>
                 <div class="account">
-        
-                    <img class="add" src="../img/add terms & conditions (1).png" alt="">
-                    <div class="text">Terms and conditions protect your company by disallowing unbecoming<br>user behaviour and reducing your legal liability</div>
+
+                    <img class="add" src="{% static 'img/add terms & conditions (1).png' %}" alt="">
+                    <div class="text">Terms and conditions protect your company by disallowing unbecoming<br>user
+                        behaviour and reducing your legal liability</div>
                     <a class="terms" onclick="openPopup()" href="#">NEW TERMS AND CONDITION</a>
                     <div>
-              
-                      <!--RECTOR'S CODE-->
 
-                      <div class="wrapper" id="wrapper">
-                        <aside class="asid">
-                           <div class="top2">
-                               <div class="close2"><i class="fa-solid fa-xmark"></i></div> 
+                        <!--RECTOR'S CODE-->
+
+                        <div class="wrapper" id="wrapper">
+                            <aside class="asid">
+                                <div class="top2">
+                                    <div class="close2"><i class="fa-solid fa-xmark"></i></div>
                                 </div>
-                           <div class="sidebar2">
-                               <ul>
-                                   <li><a class="at" href="dashboard-acct.html">Step 1</a></li>
-                                   <li><a class="as" href="step2.html">Step 2</a></li>
-                                   <li><a class="an" href="step3.html">Step 3</a></li>
-                               </ul>
-                            </div>
-                           </aside>
-                           
-                           <div class="main-content">
-                               <div class="header2">Terms and conditions</div>
-                               <div class="bars2"><i class="fa-solid fa-bars"></i></div>
-                                 <form action="/action_page.php" method="get" id="nameform" class="form">
-                                   <div class="for">
-                                   <div class="question-a">
-                                       <div>
-                                           <label for="">Name of your Company<span id="star">*</span></label>
-                                           <input class="input-type" type="text" required placeholder="Chris Gift Ltd">
-                                       </div><br>
-                                       <div>
-                                           <label for="">Website URL<span id="star">*</span></label>
-                                           <input class="input-type" type="text" required placeholder="https://">
-                                       </div><br>
-                                       <div>
-                                           <label for="">Country<span id="star">*</span></label><br>
-                                           <input class="input-type" type="text" required placeholder="Nigeria">
-                                       </div><br>
-                                       <div>
-                                           <label for="">How can users contact you?</label><br>
-                                           <input class="input-type" type="checkbox" name="option1" required>
-                                           <span class="checkmark"></span>
-                                           <label for="">Email </label><br>
-                                           <input class="input-type" type="checkbox" name="option1" required>
-                                           <span class="checkmark"></span>
-                                           <label for=""> Website  </label>
-                                       </div><br>
-                                       <div>
-                                           <a href="#" class="back" style="color: #111F4D;">Back</a>
-                                       </div>
-                                   </div>
-                   
-                                   <!-- Question B -->
-                   
-                                   <div class="question-b">
-                                       <div>
-                                           <label for="">Do you collect personal information?<span id="star">*</span></label><br>
-                                           <input class="input-type" type="radio" name="option1" required>
-                                           <span class="radiomark"></span>
-                                           <label for="">Yes </label><br>
-                                          <input class="input-type" type="radio" name="option1" required>
-                                           <span class="radiomark"></span>
-                                           <label for="">No </label>
-                                       </div><br>
-                                       <div>
-                                           <label for="">Can user create Accounts?<span id="star">*</span></label><br>
-                   
-                                           <input class="input-type" type="radio" name="option1" required>
-                                           <span class="radiomark"></span>
-                                           <label for="">Yes  </label><br>
-                   
-                                           <input class="input-type" type="radio" name="option1" required>
-                                           <span class="radiomark"></span>
-                                           <label for="">No </label>
-                                       </div><br>
-                                       <div>
-                                           <label for="">Does your website use this services?</label><br>
-                   
-                                           <input class="input-type" type="checkbox" name="option1" required>
-                                           <span class="checkmark"></span>
-                                           <label for="">Camera</label><br>
-                   
-                                           <input class="input-type" type="checkbox" name="option1" required>
-                                           <span class="checkmark"></span>
-                                           <label for="">Geolocation</label>
-                                       </div><br>
-                                       <div>
-                                           <a href="step2.html" class="continue" style="color: white;">Continue</a>
-                                       </div>
-                                   </div>
-                           </div>
-                   </form>
-                       </div>
-                       </div>
-                       </form>
-                       </div>
-                       </div>
-                       <script src="napp2.js"></script>
-                   
-              
-                    </div>
-                  </div>
-                </div>
-                </div>
-                </div>
-           <!--RECTOR'S CODE-->
+                                <div class="sidebar2">
+                                    <ul>
+                                        <li><a class="at" href="{% url 'newterms' %}">Step 1</a></li>
+                                        <li><a class="as" href="{% url 'step2' %}">Step 2</a></li>
+                                        <li><a class="an" href="{% url 'step3' %}">Step 3</a></li>
+                                    </ul>
+                                </div>
+                            </aside>
 
-                <script>
-                  let popup = document.getElementById("wrapper");
-              
-                  function openPopup() {
-                    popup.classList.add("open-popup");
-                  }
-                </script>
-                <footer>
-                    <div class="footer">
-                        <div><a href="#">Privacy Policy</a></div>
-                        <div><a href="#">Terms of Use</a></div>
-                        <div><a href="#">Disclaimer</a></div>
+                            <div class="main-content">
+                                <div class="header2">Terms and conditions</div>
+                                <div class="bars2"><i class="fa-solid fa-bars"></i></div>
+                                <form action="newterms" method="POST" id="nameform" class="form">
+                                    <div class="for">
+                                        <div class="question-a">
+                                            <div>
+                                                <label for="">Name of your Company<span id="star">*</span></label>
+                                                <input class="input-type" name="company_name" type="text" required
+                                                    placeholder="Chris Gift Ltd">
+                                            </div><br>
+                                            <div>
+                                                <label for="">Website URL<span id="star">*</span></label>
+                                                <input class="input-type" name="company_website" type="text" required placeholder="https://">
+                                            </div><br>
+                                            <div>
+                                                <label for="">Country<span id="star">*</span></label><br>
+                                                <input class="input-type" name="country" type="text" required placeholder="Nigeria">
+                                            </div><br>
+                                            <div>
+                                                <label for="">How can users contact you?</label><br>
+                                                <input class="input-type" type="checkbox" name="option1" required>
+                                                <span class="checkmark"></span>
+                                                <label for="">Email </label><br>
+                                                <input class="input-type" type="checkbox" name="option1" required>
+                                                <span class="checkmark"></span>
+                                                <label for=""> Website </label>
+                                            </div><br>
+                                            <div>
+                                                <a href="{% url 'newterms' %}" class="back" style="color: #111F4D;">Back</a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Question B -->
+
+                                        <div class="question-b">
+                                            <div>
+                                                <label for="">Do you collect personal information?<span
+                                                        id="star">*</span></label><br>
+                                                <input class="input-type" type="radio" name="option1" required>
+                                                <span class="radiomark"></span>
+                                                <label for="">Yes </label><br>
+                                                <input class="input-type" type="radio" name="option1" required>
+                                                <span class="radiomark"></span>
+                                                <label for="">No </label>
+                                            </div><br>
+                                            <div>
+                                                <label for="">Can user create Accounts?<span
+                                                        id="star">*</span></label><br>
+
+                                                <input class="input-type" type="radio" name="option1" required>
+                                                <span class="radiomark"></span>
+                                                <label for="">Yes </label><br>
+
+                                                <input class="input-type" type="radio" name="option1" required>
+                                                <span class="radiomark"></span>
+                                                <label for="">No </label>
+                                            </div><br>
+                                            <div>
+                                                <label for="">Does your website use this services?</label><br>
+
+                                                <input class="input-type" type="checkbox" name="option1" required>
+                                                <span class="checkmark"></span>
+                                                <label for="">Camera</label><br>
+
+                                                <input class="input-type" type="checkbox" name="option1" required>
+                                                <span class="checkmark"></span>
+                                                <label for="">Geolocation</label>
+                                            </div><br>
+                                            <div>
+                                                <a href="{% url 'step2' %}" class="continue" style="color: white;">Continue</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </footer>
+                </div>
+                <script src="{% static 'napp2.js' %}"></script>
+
+
             </div>
+        </div>
+        <!--RECTOR'S CODE-->
+
+        <script>
+            let popup = document.getElementById("wrapper");
+
+            function openPopup() {
+                popup.classList.add("open-popup");
+            }
+        </script>
+        <footer>
+            <div class="footer">
+                <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+                <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+                <div><a href="#">Disclaimer</a></div>
+            </div>
+        </footer>
+        </div>
         </div>
     </section>
 
-    <script src="napp.js"></script>  
+    <script src="{% static 'napp.js' %}"></script>
 </body>
+
 </html>
