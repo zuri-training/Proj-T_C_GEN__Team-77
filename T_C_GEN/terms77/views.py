@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from django.utils.datastructures import MultiValueDictKeyError
+from .models import companies
 
 # from T_C_GEN.terms77.models import companies
 
@@ -14,7 +14,8 @@ def index(request):
 
 def signup(request):
     if request.method == 'POST':
-        username = request.POST['fullname']
+        username = request.POST['username']
+        fullname = request.POST['fullname']
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
@@ -24,7 +25,7 @@ def signup(request):
                 messages.info(request, 'Email Already In Use')
                 return redirect('signup')
             else:
-                user = User.objects.create_user(username=username, email=email, password=password)
+                user = User.objects.create_user(username=username, email=email, password=password, fullname=fullname)
                 user.save();
                 return redirect('signin')
         else:
@@ -77,11 +78,11 @@ def forgotpass(request):
     return render(request, 'forgotpass.html',{})
 
 def newterms(request):
-    company_name = request.POST.["company_name"]
+    company_name = request.POST["company_name"]
     business_platform = request.POST["business_platform"]
     product_service = request.POST["product_service"]
-    companies = User.objects.create_user(company_name= company_name, business_platform=business_platform,product_service=product_service)
-    companies.save();
+    data = companies(company_name=company_name, business_platform=business_platform, product_service=product_service)
+    data.save()
     return render(request, 'newterms.html',{})
    
     
