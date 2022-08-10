@@ -1,3 +1,5 @@
+
+
 :root {
   --footer_color: #111f4d;
 }
@@ -6,6 +8,14 @@
 
 nav button, footer, .button1, .benefits, .section1 button {
   background-color: var(--footer_color);
+}
+
+.button2:hover {
+  opacity: 75%;
+}
+
+.link:hover {
+font-weight: bold;
 }
 
  .steps {
@@ -65,5 +75,9 @@ z-index: 1;
 }
 
 .benefits, .testimonials {
-transition: transform .75s;
+transition: transform 2s;
 }
+
+
+
+
