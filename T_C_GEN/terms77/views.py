@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
+# from T_C_GEN.terms77.models import companies
+
 # Create your views here.
 
 def index(request):
@@ -74,7 +76,15 @@ def forgotpass(request):
     return render(request, 'forgotpass.html',{})
 
 def newterms(request):
+    company_name = request.POST["company_name"]
+    business_platform = request.POST["business_platform"]
+    product_service = request.POST["product_service"]
+    companies = User.objects.create_user(company_name= company_name, business_platform=business_platform,product_service=product_service)
+    companies.save();
     return render(request, 'newterms.html',{})
+   
+    
+    
 
 def ourprivacypolicy(request):
     return render(request, 'ourprivacypolicy.html',{})
