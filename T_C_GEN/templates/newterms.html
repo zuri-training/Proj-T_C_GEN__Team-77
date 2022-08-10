@@ -81,67 +81,39 @@
                                         <div class="question-a">
                                             <div>
                                                 <label for="">Name of your Company<span id="star">*</span></label>
-                                                <input class="input-type" name="company_name" type="text" required
-                                                    placeholder="Chris Gift Ltd">
+                                                <input class="input-type" name="company_name"  type="text"  required placeholder="Chris Gift Ltd">
                                             </div><br>
                                             <div>
-                                                <label for="">Website URL<span id="star">*</span></label>
-                                                <input class="input-type" name="company_website" type="text" required placeholder="https://">
+                                                <label for="">Country<span id="star">*</span></label>
+                                                <input class="input-type" name="country" type="text"  required placeholder="ChrisGift">
                                             </div><br>
                                             <div>
-                                                <label for="">Country<span id="star">*</span></label><br>
-                                                <input class="input-type" name="country" type="text" required placeholder="Nigeria">
+                                                <label for="">Company address<span id="star">*</span></label><br>
+                                                <input class="input-type" name="Company_address" type="text" required placeholder="Nigeria">
                                             </div><br>
                                             <div>
-                                                <label for="">How can users contact you?</label><br>
-                                                <input class="input-type" type="checkbox" name="option1" required>
-                                                <span class="checkmark"></span>
-                                                <label for="">Email </label><br>
-                                                <input class="input-type" type="checkbox" name="option1" required>
-                                                <span class="checkmark"></span>
-                                                <label for=""> Website </label>
+                                              
                                             </div><br>
                                             <div>
-                                                <a href="{% url 'newterms' %}" class="back" style="color: #111F4D;">Back</a>
+                                                <a href="newterms.html" class="back" style="color: #111F4D;">Back</a>
                                             </div>
                                         </div>
-
+                        
                                         <!-- Question B -->
-
+                        
                                         <div class="question-b">
                                             <div>
-                                                <label for="">Do you collect personal information?<span
-                                                        id="star">*</span></label><br>
-                                                <input class="input-type" type="radio" name="option1" required>
-                                                <span class="radiomark"></span>
-                                                <label for="">Yes </label><br>
-                                                <input class="input-type" type="radio" name="option1" required>
-                                                <span class="radiomark"></span>
-                                                <label for="">No </label>
+                                             <label for="">Type of business/platform<span id="star">*</span></label><br>
+                                             <input class="input-type" name="business_platform" type="text" required placeholder="Trading">
                                             </div><br>
                                             <div>
-                                                <label for="">Can user create Accounts?<span
-                                                        id="star">*</span></label><br>
-
-                                                <input class="input-type" type="radio" name="option1" required>
-                                                <span class="radiomark"></span>
-                                                <label for="">Yes </label><br>
-
-                                                <input class="input-type" type="radio" name="option1" required>
-                                                <span class="radiomark"></span>
-                                                <label for="">No </label>
+                                             <label for=""> Type of product/service<span id="star">*</span></label>
+                                             <input class="input-type" name="product_service" type="text"  required placeholder="Crypto">
                                             </div><br>
                                             <div>
-                                                <label for="">Does your website use this services?</label><br>
-
-                                                <input class="input-type" type="checkbox" name="option1" required>
-                                                <span class="checkmark"></span>
-                                                <label for="">Camera</label><br>
-
-                                                <input class="input-type" type="checkbox" name="option1" required>
-                                                <span class="checkmark"></span>
-                                                <label for="">Geolocation</label>
-                                            </div><br>
+                                             <label for="">Website URL<span id="star">*</span></label>
+                                             <input class="input-type" type="text" name="company_website" required placeholder="https://www.chrisgift.com">
+                                            </div><br><br>
                                             <div>
                                                 <a href="{% url 'step2' %}" class="continue" style="color: white;">Continue</a>
                                             </div>
