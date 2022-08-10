@@ -1,0 +1,27 @@
+p.fw-lighter{
+    color: #959BB0;
+}
+footer a{
+    text-decoration: none; 
+    color: #959BB0;
+}
+footer p{
+    color: #959BB0;
+}
+a{
+    text-decoration: none;
+}
+/* .buttons{
+    background-color: #F9F9F9;
+    border: 1px solid #F9F9F9;
+    border-radius: 5px;
+    color: #959BB0;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    float: right;
+} */

@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-# from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +27,6 @@ SECRET_KEY='xcq@$eo-%*t0vna(c^gg*ujg)wlx@*@lxa=b4yxfkjxgne+&u6'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = config('DEBUG', cast=bool)
 DEBUG=True
 
 
@@ -49,10 +47,10 @@ INSTALLED_APPS = [
     'terms77',
     
     #django-extensions
-    'django_extensions',
+    # 'django_extensions',
     
     #crispy forms
-    'crispy_forms',
+    # 'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +68,7 @@ ROOT_URLCONF = 'T_C_GEN.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,18 +130,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'terms77.CustomUser'
+# AUTH_USER_MODEL = 'terms77.CustomUser'
 
-LOGIN_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
 
-LOGOUT_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: inter sans-serif;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 14rem auto;
+}
+
+aside {
+    border-right: 1px solid black;
+    /* background-color: aqua; */
+    height: 100vh;
+    margin: 0;
+    /* display: none; */
+}
+
+.top {
+    display: flex;
+}
+
+.top .logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.top .close {
+    font-size: 25px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.top img {
+    width: 50%;
+    padding-top: 10px;
+}
+
+.sidebar {
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.sidebar ul li {
+    /* line-height: 80px; */
+    margin-top: 50px;
+    font-size: 25px;
+    /* width: 100%;
+    border: 1px solid red; */
+}
+
+.sidebar .logout {
+    margin-top: 170px;
+}
+
+.temp, .set, .logout{
+    background-color: #F6F8FA;
+    border: 1px solid #111F4D;
+    display: grid;
+    height: 45px;
+    width: 12rem;
+    place-items: center;
+}
+
+.set {
+    background-color: #111F4D;
+    color: white;
+}
+
+.set a {
+    color: white;
+}
+
+.temp a, .logout a {
+    color: #111F4D;
+}
+
+.main {
+    height: 100vh;
+}
+
+.main .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.user i {
+    font-size: 30px;
+}
+
+.user span {
+    font-size: 18px;
+    padding-left: 7px;
+}
+
+.user {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: auto;
+}
+
+.account {
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+/* .account {
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+  } */
+  
+.details {
+    padding-top: 60px;
+}
+
+.edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editt {
+    font-size: 25px;
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.editt a {
+    color: #111F4D;
+}
+
+.editt a p {
+    font-size: 14px;
+    color: #111F4D;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.detail {
+    padding-top: 7px;
+}
+
+.edit .sett h3 {
+    font-size: 30px;
+    padding-left: 70px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 190px;
+    border-top: #111F4D 1px solid;
+}
+
+.footer a {
+    color: #111F4D;
+}
+
+.bars, .close {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .container {
+        display: block;
+        /* grid-template-columns: auto, auto; */
+    }
+    
+    aside {
+        display: none;
+        position: fixed;
+        z-index: 3;
+        background-color: aliceblue;
+        height: 100vh;
+        margin-top: 0;
+        /* width: 100%; */
+    }
+
+    .sidebar .logout {
+        margin-top: 40px;
+    }
+
+    .date, .time {
+        display: none;
+    }
+
+    .bars, .close {
+        display: block;
+    }
+
+    .main .profile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        padding-top: 10px;
+        /* margin: auto; */
+    }
+
+    .bars {
+       margin-left: 10px; 
+    }
+
+    .bars i {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 240px;
+    }
+}
+
+@media (max-width: 426px) {
+    .edit .sett h3 {
+        font-size: 20px;
+        padding-left: 0px;
+    }
+
+    .editt {
+        margin-right: 20px;
+    }
+
+    .editt {
+        font-size: 19px;
+        /* margin-right: 100px; */
+        cursor: pointer;
+    }
+
+    .editt a p {
+        font-size: 11px;
+    }
+}
