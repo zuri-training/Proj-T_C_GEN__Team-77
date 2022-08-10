@@ -85,11 +85,11 @@ def settings(request):
 def termsofuse(request):
     return render(request, 'termsofuse.html',{})
 
-def step2(request):
-    return render(request, 'step2.html',{})
+# def step2(request):
+#     return render(request, 'step2.html',{})
 
-def step3(request):
-    return render(request, 'step3.html',{})
+# def step3(request):
+#     return render(request, 'step3.html',{})
 
 def logout(request):
     auth.logout(request)
