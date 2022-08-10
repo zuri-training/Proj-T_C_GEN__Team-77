@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.utils.datastructures import MultiValueDictKeyError
 
 # from T_C_GEN.terms77.models import companies
 
@@ -76,7 +77,7 @@ def forgotpass(request):
     return render(request, 'forgotpass.html',{})
 
 def newterms(request):
-    company_name = request.POST["company_name"]
+    company_name = request.POST.["company_name"]
     business_platform = request.POST["business_platform"]
     product_service = request.POST["product_service"]
     companies = User.objects.create_user(company_name= company_name, business_platform=business_platform,product_service=product_service)
@@ -110,3 +111,22 @@ def preview(request):
 
 def dashboard_acct_edit(request):
     return render(request, 'dashboard-acct-edit.html',{})
+
+def aboutus(request):
+    return render(request, 'aboutus.html',{})
+
+def faq(request):
+    return render(request, 'faq.html',{})
+
+def settingsedit(request):
+    return render(request, 'settingsedit.html',{})
+
+
+def step22(request):
+    return render(request, 'step22.html',{})
+
+
+def step33(request):
+    return render(request, 'step33.html',{})
+
+

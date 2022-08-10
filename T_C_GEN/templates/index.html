@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
 
         <div class="navbar-nav" style="margin: auto;">
-          <a class="nav-link mx-2 link" aria-current="page" href="#">About us</a>
+          <a class="nav-link mx-2 link" aria-current="page" href="{%url 'aboutus' %}">About us</a>
           <a class="nav-link mx-2 link" href="#">Templates</a>
           <a class="nav-link mx-2 link" href="#">Contact us</a>
         </div>
@@ -328,23 +328,24 @@
           <div>
             <h4>Company</h4>
           </div>
-          <p><a class="text-light link-info" href="#"> About us</a></p>
-          <p><a class="text-light link-info" href="#"> Our Terms of use</a></p>
-          <p><a class="text-light link-info" href="#">Our Privacy Policy</p></a>
+          <p><a class="text-light link-info" href="{% url 'aboutus' %}"> About us</a></p>
+          <p><a class="text-light link-info" href="{% url 'termsofuse' %}"> Our Terms of use</a></p>
+          <p><a class="text-light link-info" href="{% url 'ourprivacypolicy' %}">Our Privacy Policy</p></a>
         </div>
         <div class="col-sm-12 col-lg-2 col-md-6 p-2">
           <div>
             <h4>Resources</h4>
+            
           </div>
-          <p><a class="text-light link-info" href="#"> Terms and conditions</a></p>
-          <p><a class="text-light link-info" href="#"> Privacy policies</a></p>
+          <p><a class="text-light link-info" href="{% url 'signup' %}"> Terms and conditions</a></p>
+          <p><a class="text-light link-info" href="{% url 'signup' %}"> Privacy policies</a></p>
         </div>
         <div class="col-sm-12 col-lg-2 col-md-5 p-2">
           <div>
             <h4> Help</h4>
           </div>
           <p><a class="text-light link-info" href="#"> Contact us</a></p>
-          <p><a class="text-light link-info" href="#"> FAQs</a></p>
+          <p><a class="text-light link-info" href="{% url 'faq' %}"> FAQs</a></p>
         </div>
       </div>
     </div>

@@ -17,4 +17,5 @@ urlpatterns = [
    path('preview', views.settings, name='preview'),
    path('logout', views.logout, name='logout'),
    path('dashboard_acct_edit', views.dashboard_acct_edit, name='dashboard_acct_edit'),
+   path('faq', views.faq, name='faq'),
 ]
