@@ -11,8 +11,8 @@ class companies(models.Model):
     product_service = models.TextField(max_length=50, default="")
     company_website = models.TextField(max_length=50, default="")
 
-    def __str__(self):
-        return self.companies
+    # def __str__(self):
+    #     return self.company_name
 
 class policies(models.Model):
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -21,8 +21,9 @@ class policies(models.Model):
     product_services = models.TextField(max_length=50, default="")
     company_websites = models.TextField(max_length=50, default="")
 
-    def __str__(self):
-        return self.policies
+    # def __str__(self):
+    #     return self.company_names
+    
 
 
 

@@ -1,4 +1,5 @@
 import email
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
@@ -135,10 +136,18 @@ def logout(request):
     return redirect('/')
 
 def preview(request):
-    return render(request, 'preview.html',{})
+    data = companies.objects.all()
+    context = {
+        'data':data
+    }
+    return render(request, 'preview.html', context)
 
 def preview2(request):
-    return render(request, 'preview2.html',{})
+    datas = policies.objects.all()
+    context = {
+        'datas':datas
+    }
+    return render(request, 'preview2.html', context)
 
 def dashboard_acct_edit(request):
     return render(request, 'dashboard-acct-edit.html',{})
