@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'contactus.css' %}">
+    <title>Contact Us</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light mb-5">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="{% static 'img/Group 34 (1).jpg'%}" class="p-2" alt="Terms77logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+            
+            <div class="navbar-nav" style="margin: auto;">
+              <a class="nav-link mx-2" aria-current="page" href="{% url 'aboutus' %}">About us</a>
+              <a class="nav-link mx-2" href="{%url 'signup'%}">Templates</a>
+              <a class="nav-link mx-2" href="{% url 'contactus' %}">Contact us</a>
+            </div>
+            <div class="d-flex">
+              <button class="btn btn-light mx-2 bg-light" type="submit"> <a href="{% url 'signin' %}"style=" text-decoration: none">Login</a></button>
+              <button class="btn mx-2 text-light link-info" type="submit" style="background-color: #111F4D"> <a href="{% url 'signup' %}" style="color: white; text-decoration: none">Sign Up</a></button>
+            </div>
+          </div>
+          
+        </div>
+      </nav>     
+
+    <main>
+        <div class="text-center">
+            <img src="{% static 'img/Group 61.jpg' %}" class="img-fluid" alt="contactimg">
+        </div>            
+        <hr>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3>SEND US AN EMAIL:</h3>
+                    <p>ENQUIRE FROM US, WE'LL GET BACK TO YOU IN 24HRS!</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="name"> <strong> NAME:</strong></label><br>
+                        <input type="text" id="name" name="name" placeholder="John Doe"><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><strong>EMAIL:</strong> </label><br>
+                         <input type="email" id="email" name="email" placeholder="johndoe@email.com"><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="howcan"><strong>HOW CAN WE HELP YOU?</strong> </label><br>
+                         <textarea name="howcan" id="howcan" cols="30" rows="10"></textarea><br>
+                        </div>                                      
+                         <button type="submit" class="btn btn-primary" style="background-color: #111f4d;">SEND</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <div class="givefeedback">
+                        
+                            <h2 >Give your feedback</h2>
+                    <p>We would love to hear your experience while using our website, to improve our services</p>
+                    <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea><br>
+                    <button class="btn btn-primary" style="background-color: #111f4d;">SEND</button>
+                        
+                        
+                    </div>                            
+                </div>
+            </div>
+                        
+        </div>
+       
+
+        
+    </main>
+
+    <footer class="text-white text-center text-lg-start"style="background-color: #111F4D;">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5>Terms 77</h5>
+                    <p>We are a full service law firm that specializes in creating customized Privacy Policies and Terms & Conditions faster to keep yourbusiness safe from any issues</p>
+                </div>               
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>About Us</li>
+                        <li>Our Termsof Use</li>
+                        <li>Our privacy policies</li>    
+                    </ul>                
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled mb-0">                        
+                        <li>Terms and Conditions</li>
+                        <li>Privacy Policies</li>
+                    </ul>                    
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Help</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>Contact Us</li>
+                        <li>FAQs</li>
+                    </ul>
+                </div>                        
+            </div>
+        </div>
+        <hr>
+        <p>All rights reserved</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    
+</body>
+</html>

@@ -20,4 +20,5 @@ urlpatterns = [
    path('privacypolicynt', views.privacypolicynt, name='privacypolicynt'),
    path('step2', views.step2, name='step2'),
    path('step3', views.step3, name='step3'),
+   path('contactus', views.contactus, name='contactus'),
 ]
