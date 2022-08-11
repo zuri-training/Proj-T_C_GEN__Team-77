@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <img src="{% static 'images/terms77.jpg' %}" alt="" class="pt-2">
+        <img src="{% static 'img/terms77.jpg' %}" alt="" class="pt-2">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5" style="margin: auto;">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
@@ -235,7 +235,7 @@
             <div class="fw-lighter lh-sm">
               <h6>Help</h6>
               <p><a href="#" style="text-decoration: none;">Contact us</a></p>
-              <p><a href="#" style="text-decoration: none;">FAQs</a></p>
+              <p><a href="{% url 'faq'%}" style="text-decoration: none;">FAQs</a></p>
             </div>
           </div>
         </div> 

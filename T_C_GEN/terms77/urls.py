@@ -18,4 +18,6 @@ urlpatterns = [
    path('dashboard_acct_edit', views.dashboard_acct_edit, name='dashboard_acct_edit'),
    path('faq', views.faq, name='faq'),
    path('privacypolicynt', views.privacypolicynt, name='privacypolicynt'),
+   path('step2', views.step2, name='step2'),
+   path('step3', views.step3, name='step3'),
 ]

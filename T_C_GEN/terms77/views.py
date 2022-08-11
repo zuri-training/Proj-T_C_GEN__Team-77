@@ -29,7 +29,7 @@ def signup(request):
                 messages.info(request, 'Email Already In Use')
                 return redirect('signup')
             else:
-                user = User.objects.create_user(username=username, email=email, password=password, fullname=fullname)
+                user = User.objects.create_user(username=username, email=email, password=password)
                 user.save();
                 return redirect('signin')
         else:
@@ -125,11 +125,11 @@ def settings(request):
 def termsofuse(request):
     return render(request, 'termsofuse.html',{})
 
-# def step2(request):
-#     return render(request, 'step2.html',{})
+def step2(request):
+    return render(request, 'step2.html',{})
 
-# def step3(request):
-#     return render(request, 'step3.html',{})
+def step3(request):
+    return render(request, 'step3.html',{})
 
 def logout(request):
     auth.logout(request)
@@ -168,5 +168,6 @@ def step22(request):
 
 def step33(request):
     return render(request, 'step33.html',{})
+
 
 
