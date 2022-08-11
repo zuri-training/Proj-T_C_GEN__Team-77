@@ -34,11 +34,11 @@
         <div class="d-flex">
 
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <!-- {% if user.is_authenticated %} -->
+            {% if user.is_authenticated %}
             <div class="dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                <!-- {{ user.username }} -->
+                Welcome {{ user.username }}
               </a>
               <ul class="dropdown-menu">
                 <a class="dropdown-item" href="{% url 'settings' %}">Change password</a>
@@ -47,21 +47,21 @@
               </ul>
             </div>
 
-            <!-- {% else %} -->
+            {% else %}
             <form class="form-inline ml-auto">
               <div class="container">
-                <!-- {% if user.is_authenticated %} -->
+                {% if user.is_authenticated %}
                 <p><a href="{% url 'logout' %}">logout</a></p>
 
-                <!-- {% else %} -->
+                {% else %}
                 <a href="{% url 'signin' %}" class="btn">login</a>
                 <a href="{% url 'signup' %}" class="btn text-light link-info button2"
                   style="background-color: var(--footer_color)">signup</a>
-                <!-- {% endif %} -->
+                {% endif %}
               </div>
 
             </form>
-            <!-- {% endif %} -->
+            {% endif %}
 
           </div>
 
@@ -83,14 +83,14 @@
           <p>Our Terms and Conditions templates are easy to use, you can capture your
             business' legal agreement at a glance</p>
         </div>
-        <!-- {% if user.is_authenticated %} -->
+        {% if user.is_authenticated %}
         <a href="{% url 'dashboard' %}"
           class="btn col-lg-3 btn-lg m-auto text-light text-center button1 button2 link-info"
           style="background-color: var(--footer_color)"> Get Started</a>
-        <!-- {% else %} -->
+        {% else %}
         <a href="{% url 'signup' %}" class="btn col-lg-3 btn-lg m-auto text-light text-center button1 button2 link-info"
           style="background-color: var(--footer_color)"> Get Started</a>
-        <!-- {% endif %} -->
+        {% endif %}
       </div>
       <div class="row p-2">
         <div class="col-sm-12 col-md-12 col-lg-6 px-5">
@@ -113,36 +113,36 @@
         </div>
         <div class="row mb-5">
           <div class="col-sm-12 col-md-12 col-lg-6">
-            <!-- {% if user.is_authenticated %} -->
-            <a href="{% url 'dashboard' %}"
+            {% if user.is_authenticated %}
+            <a href="{% url 'newterms' %}"
               class="btn btn-lg col-lg-9 my-3 justify-content-left text-light link-info button2"
               style="background-color: var(--footer_color)">Terms and conditions</a>
-            <!-- {% else %} -->
+            {% else %}
             <a href="{% url 'signup' %}"
               class="btn btn-lg col-lg-9 my-3 justify-content-left text-light link-info button2"
               style="background-color: var(--footer_color)">Terms and conditions</a>
-            <!-- {% endif %} -->
+            {% endif %}
             <br>
-            <!-- {% if user.is_authenticated %} -->
-            <a href="{% url 'dashboard' %}"
+            {% if user.is_authenticated %}
+            <a href="{% url 'privacypolicynt' %}"
               class="btn btn-lg col-lg-6 my-3 justify-content-start text-light link-info button2"
               style="background-color: var(--footer_color)">Privacy Policy</a>
-            <!-- {% else %} -->
+            {% else %}
             <a href="{% url 'signup' %}"
               class="btn btn-lg col-lg-6 my-3 justify-content-start text-light link-info button2"
               style="background-color: var(--footer_color)">Privacy Policy</a>
-            <!-- {% endif %} -->
+            {% endif %}
           </div>
           <div class="col-sm-12 col-md-12 col-lg-6">
             <p>Terms and Conditions is a legal agreement between a service and a person that wantts to use that service.
               Our geneator can help you clear all your doubts with no hassle.</p>
-            <!-- {% if user.is_authenticated %} -->
+            {% if user.is_authenticated %}
             <a href="{% url 'dashboard' %}" class="btn btn-lg m-auto text-light text-center link-info button1 button2"
               style="background-color: var(--footer_color)">Get started</a>
-            <!-- {% else %} -->
+            {% else %}
             <a href="{% url 'signup' %}" class="btn btn-lg m-auto text-light text-center link-info button1 button2"
               style="background-color: var(--footer_color)">Get started</a>
-            <!-- {% endif %} -->
+            {% endif %}
           </div>
 
         </div>
@@ -335,10 +335,15 @@
         <div class="col-sm-12 col-lg-2 col-md-6 p-2">
           <div>
             <h4>Resources</h4>
-            
+
           </div>
+          {% if user.is_authenticated %}
+          <p><a class="text-light link-info" href="{% url 'newterms' %}"> Terms and conditions</a></p>
+          <p><a class="text-light link-info" href="{% url 'privacypolicynt' %}"> Privacy policies</a></p>
+          {% else %}
           <p><a class="text-light link-info" href="{% url 'signup' %}"> Terms and conditions</a></p>
           <p><a class="text-light link-info" href="{% url 'signup' %}"> Privacy policies</a></p>
+          {% endif %}
         </div>
         <div class="col-sm-12 col-lg-2 col-md-5 p-2">
           <div>
