@@ -12,10 +12,10 @@ urlpatterns = [
    path('ourprivacypolicy', views.ourprivacypolicy, name='ourprivacypolicy'),
    path('settings', views.settings, name='settings'),
    path('termsofuse', views.termsofuse, name='termsofuse'),
-   path('step2', views.settings, name='step2'),
-   path('step3', views.settings, name='step3'),
-   path('preview', views.settings, name='preview'),
+   path('preview', views.preview, name='preview'),
+   path('preview2', views.preview2, name='preview2'),
    path('logout', views.logout, name='logout'),
    path('dashboard_acct_edit', views.dashboard_acct_edit, name='dashboard_acct_edit'),
    path('faq', views.faq, name='faq'),
+   path('privacypolicynt', views.privacypolicynt, name='privacypolicynt'),
 ]

@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'ready.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+
+        </div>
+        <div class="main-content">
+            <div class="header">Privacy Policy</div>
+            <div class="img">
+                <img src="{% static 'img/Group 62.png' %}" width="200px" height="200px" alt="">
+            </div>
+            <div class="ready">
+                <h4>Your template is ready</h4>
+            </div><br><br><br>
+            <div>
+                <div class="button">
+                    <a href="{% url 'privacypolicynt' %}" id="newBack" style="color: #111F4D; text-decoration: none;">Back</a> </button>
+                    <a href="{% url 'preview2' %}" id="preview" style="color: white ; text-decoration: none;">Preview</a> </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

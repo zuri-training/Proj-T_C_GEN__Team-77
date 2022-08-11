@@ -3,7 +3,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import companies
+from .models import companies, policies
+from django.db import models
+from django.conf import settings
+from django.utils.datastructures import MultiValueDictKeyError
 
 # from T_C_GEN.terms77.models import companies
 
@@ -78,14 +81,38 @@ def forgotpass(request):
     return render(request, 'forgotpass.html',{})
 
 def newterms(request):
-    company_name = request.POST["company_name"]
-    business_platform = request.POST["business_platform"]
-    product_service = request.POST["product_service"]
-    data = companies(company_name=company_name, business_platform=business_platform, product_service=product_service)
-    data.save()
-    return render(request, 'newterms.html',{})
-   
-    
+    if request.method=="POST":
+        user = models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
+        company_name = request.POST['company_name']
+        business_platform = request.POST['business_platform']
+        product_service = request.POST['product_service']
+        company_website = request.POST['company_website']
+        data=companies(company_name=company_name, business_platform=business_platform, product_service=product_service, company_website=company_website)
+        data.save()
+
+        if company_name is not None:
+            return render(request, 'ready.html',{})
+        else:
+            return render(request, 'newterms.html', {})
+    else:
+        return render(request, 'newterms.html',{})
+
+def privacypolicynt(request):
+    if request.method=="POST":
+        user = models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
+        company_names = request.POST['company_names']
+        business_platforms = request.POST['business_platforms']
+        product_services = request.POST['product_services']
+        company_websites = request.POST['company_websites']
+        data=policies(company_names=company_names, business_platforms=business_platforms, product_services=product_services, company_websites=company_websites)
+        data.save()
+
+        if company_names is not None:
+            return render(request, 'ready2.html',{})
+        else:
+            return render(request, 'privacypolicynt.html', {})
+    else:
+        return render(request, 'privacypolicynt.html',{})
     
 
 def ourprivacypolicy(request):
@@ -109,6 +136,9 @@ def logout(request):
 
 def preview(request):
     return render(request, 'preview.html',{})
+
+def preview2(request):
+    return render(request, 'preview2.html',{})
 
 def dashboard_acct_edit(request):
     return render(request, 'dashboard-acct-edit.html',{})

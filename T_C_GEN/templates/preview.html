@@ -66,10 +66,10 @@
         <div
           class="col-lg-6 col-md-6 col-sm-12 text-center justify-content-lg-end align-items-lg-end align-items-md-center justify-content-md-center justify-content-sm-center align-items-sm-center"
         >
-          <button class="btn"><img src="{% static 'img/listen.png %}" alt="Audio" /></button>
-          <button class="btn"><img src="{% static 'img/download.png %}" alt="Download" /></button>
-          <button class="btn"><img src="{% static 'img/share.png %}" alt="Share" /></button>
-          <button class="btn"><img src="{% static 'img/embed.png %}" alt="Embed" /></button>
+          <button class="btn"><img src="{% static 'img/listen.png' %}" alt="Audio" /></button>
+          <button class="btn"><img src="{% static 'img/download.png' %}" alt="Download" /></button>
+          <button class="btn"><img src="{% static 'img/share.png' %}" alt="Share" /></button>
+          <button class="btn"><img src="{% static 'img/embed.png' %}" alt="Embed" /></button>
         </div>
       </div>
     </div>
@@ -240,7 +240,7 @@
             <div class="fw-lighter lh-sm">
               <h6>Help</h6>
               <p><a href="#">Contact us</a></p>
-              <p><a href="#" class="">FAQs</a></p>
+              <p><a href="{% url 'faq' %}" class="">FAQs</a></p>
             </div>
           </div>
         </div>
