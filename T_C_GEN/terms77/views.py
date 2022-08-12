@@ -7,36 +7,42 @@ from django.contrib import messages
 from .models import companies, policies
 from django.db import models
 from django.conf import settings
+
 from django.utils.datastructures import MultiValueDictKeyError
 
 # from T_C_GEN.terms77.models import companies
 
 # Create your views here.
 
+
 def index(request):
-    return render(request, 'index.html',{})
+    return render(request, "index.html", {})
+
 
 def signup(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        fullname = request.POST['fullname']
-        email = request.POST['email']
-        password = request.POST['password']
-        password2 = request.POST['password2']
+    if request.method == "POST":
+        username = request.POST["username"]
+        fullname = request.POST["fullname"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        password2 = request.POST["password2"]
 
         if password == password2:
             if User.objects.filter(email=email).exists():
-                messages.info(request, 'Email Already In Use')
-                return redirect('signup')
+                messages.info(request, "Email Already In Use")
+                return redirect("signup")
             else:
-                user = User.objects.create_user(username=username, email=email, password=password)
-                user.save();
-                return redirect('signin')
+                user = User.objects.create_user(
+                    username=username, email=email, password=password
+                )
+                user.save()
+                return redirect("signin")
         else:
-            messages.info(request, 'Password not the same.')
-            return redirect('signup')
+            messages.info(request, "Password not the same.")
+            return redirect("signup")
     else:
-        return render(request, 'signup.html',{})
+        return render(request, "signup.html", {})
+
 
 class EmailBackend(object):
     def authenticate(self, request, username=None, password=None, **kwargs):
@@ -55,123 +61,143 @@ class EmailBackend(object):
         except User.DoesNotExist:
             return None
 
+
 def signin(request):
-    if request.method == 'POST':
-        email = request.POST['email']
-        password = request.POST['password']
+    if request.method == "POST":
+        email = request.POST["email"]
+        password = request.POST["password"]
 
         user = auth.authenticate(username=email, password=password)
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return redirect("/")
         else:
-            messages.info(request, 'Invalid Credentials')
-            return redirect ('signin')
+            messages.info(request, "Invalid Credentials")
+            return redirect("signin")
 
     else:
-        return render(request, 'signin.html')
+        return render(request, "signin.html")
+
 
 def dashboard(request):
-    return render(request, 'dashboard.html',{})
+    return render(request, "dashboard.html", {})
+
 
 def aboutus(request):
-    return render(request, 'aboutus.html',{})
+    return render(request, "aboutus.html", {})
+
 
 def forgotpass(request):
-    return render(request, 'forgotpass.html',{})
+    return render(request, "forgotpass.html", {})
+
 
 def newterms(request):
-    if request.method=="POST":
-        user = models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
-        company_name = request.POST['company_name']
-        business_platform = request.POST['business_platform']
-        product_service = request.POST['product_service']
-        company_website = request.POST['company_website']
-        data=companies(company_name=company_name, business_platform=business_platform, product_service=product_service, company_website=company_website)
+    if request.method == "POST":
+        user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+        company_name = request.POST["company_name"]
+        business_platform = request.POST["business_platform"]
+        product_service = request.POST["product_service"]
+        company_website = request.POST["company_website"]
+        data = companies(
+            company_name=company_name,
+            business_platform=business_platform,
+            product_service=product_service,
+            company_website=company_website,
+        )
         data.save()
 
         if company_name is not None:
-            return render(request, 'ready.html',{})
+            return render(request, "ready.html", {})
         else:
-            return render(request, 'newterms.html', {})
+            return render(request, "newterms.html", {})
     else:
-        return render(request, 'newterms.html',{})
+        return render(request, "newterms.html", {})
+
 
 def privacypolicynt(request):
-    if request.method=="POST":
-        user = models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
-        company_names = request.POST['company_names']
-        business_platforms = request.POST['business_platforms']
-        product_services = request.POST['product_services']
-        company_websites = request.POST['company_websites']
-        data=policies(company_names=company_names, business_platforms=business_platforms, product_services=product_services, company_websites=company_websites)
+    if request.method == "POST":
+        user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+        company_names = request.POST["company_names"]
+        business_platforms = request.POST["business_platforms"]
+        product_services = request.POST["product_services"]
+        company_websites = request.POST["company_websites"]
+        data = policies(
+            company_names=company_names,
+            business_platforms=business_platforms,
+            product_services=product_services,
+            company_websites=company_websites,
+        )
         data.save()
 
         if company_names is not None:
-            return render(request, 'ready2.html',{})
+            return render(request, "ready2.html", {})
         else:
-            return render(request, 'privacypolicynt.html', {})
+            return render(request, "privacypolicynt.html", {})
     else:
-        return render(request, 'privacypolicynt.html',{})
-    
+        return render(request, "privacypolicynt.html", {})
+
 
 def ourprivacypolicy(request):
-    return render(request, 'ourprivacypolicy.html',{})
+    return render(request, "ourprivacypolicy.html", {})
+
 
 def settings(request):
-    return render(request, 'settings.html',{})
+    return render(request, "settings.html", {})
+
 
 def termsofuse(request):
-    return render(request, 'termsofuse.html',{})
+    return render(request, "termsofuse.html", {})
+
 
 def step2(request):
-    return render(request, 'step2.html',{})
+    return render(request, "step2.html", {})
+
 
 def step3(request):
-    return render(request, 'step3.html',{})
+    return render(request, "step3.html", {})
+
 
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect("/")
+
 
 def preview(request):
     data = companies.objects.all()
-    context = {
-        'data':data
-    }
-    return render(request, 'preview.html', context)
+    context = {"data": data}
+    return render(request, "preview.html", context)
+
 
 def preview2(request):
     datas = policies.objects.all()
-    context = {
-        'datas':datas
-    }
-    return render(request, 'preview2.html', context)
+    context = {"datas": datas}
+    return render(request, "preview2.html", context)
+
 
 def dashboard_acct_edit(request):
-    return render(request, 'dashboard-acct-edit.html',{})
+    return render(request, "dashboard-acct-edit.html", {})
+
 
 def aboutus(request):
-    return render(request, 'aboutus.html',{})
+    return render(request, "aboutus.html", {})
+
 
 def faq(request):
-    return render(request, 'faq.html',{})
+    return render(request, "faq.html", {})
+
 
 def settingsedit(request):
-    return render(request, 'settingsedit.html',{})
+    return render(request, "settingsedit.html", {})
 
 
 def step22(request):
-    return render(request, 'step22.html',{})
+    return render(request, "step22.html", {})
 
 
 def step33(request):
-    return render(request, 'step33.html',{})
+    return render(request, "step33.html", {})
 
 
 def contactus(request):
-    return render(request, 'contactus.html',{})
-
-
-
+    return render(request, "contactus.html", {})
