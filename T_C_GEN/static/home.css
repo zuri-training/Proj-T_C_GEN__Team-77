@@ -66,7 +66,7 @@ font-size: small;
 color: gold;
 }
 
-/* @media only screen and (min-width:1000px) {
+@media only screen and (min-width:1200px) {
 
   .benefits:hover, .testimonials:hover {
   width: 30%;
@@ -78,7 +78,7 @@ color: gold;
   .benefits, .testimonials {
   transition: transform 2s;
   }
-} */
+}
 
 
 
