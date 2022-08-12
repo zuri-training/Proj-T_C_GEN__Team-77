@@ -11,6 +11,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+      <script src="{% static 'preview2.js' %}"></script>
   <link rel="stylesheet" href="{% static 'preview2.css' %}" />
   <title>Preview pages</title>
 </head>
@@ -54,24 +56,42 @@
         class="col-lg-6 col-md-6 col-sm-12 text-center justify-content-lg-center align-items-lg-center align-items-md-center justify-content-md-center justify-content-sm-center align-items-sm-center">
         <h1>PRIVACY POLICY</h1>
       </div>
-      <div
-        class="col-lg-6 col-md-6 col-sm-12 text-center justify-content-lg-end align-items-lg-end align-items-md-center justify-content-md-center justify-content-sm-center align-items-sm-center">
-        <button class="btn"><img src="{% static 'img/listen.png' %}" alt="Audio" /></button>
-        <button class="btn position-relative trans" style="background-color: #111F4D; color: white;"><i class="fa fa-play-circle-o"
-          style="padding:auto; display: block;"></i>Translate
-          <div class="position-absolute pt-3 lang">
-            <p id="google_translate_element"></p> 
-          </div>
-        </button>
-        <button class="btn"><img src="{% static 'img/download.png' %}" alt="Download" /></button>
-        <button class="btn"><img src="{% static 'img/share.png' %}" alt="Share" /></button>
-        <button class="btn"><img src="{% static 'img/embed.png' %}" alt="Embed" /></button>
+      <div class="col">
+          
+        <div class="row">
+         
+            <a class="col" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/></a>
+            <a class="col position-relative trans" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Translate"/>
+              <div class="position-absolute pt-3 lang">
+                <p id="google_translate_element"></p> 
+              </div>
+            
+            </a>
+         
+            <a onclick="generatePDF()" class="col" href="#"><img src="{% static 'img/download.png' %}" alt="Download"/></a>
+          
+          <div class="col dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{% static 'img/share.png' %}" alt="Share"/></a>
+            <div class="dropdown-menu">
+              <ul>
+              <li class="dropdown-item social-share-url facebook"><i class="bi bi-facebook"></i>Facebook</li>
+              <hr class="dropdown-divider">
+              <li class="dropdown-item social-share-url twitter"><i class="bi bi-envelope-fill"></i>Twitter</li>
+              <hr class="dropdown-divider">
+              <li class="dropdown-item social-share-url whatsapp"><i class="bi bi-whatsapp"></i>Whatsapp</li>
+              <hr class="dropdown-divider">
+              <li class="dropdown-item social-share-url linkedin"><i class="bi bi-linkedin"></i>LinkedIn</li>
+              </ul>
+            </div>
+            </div>
+        </div>
+      </div>
       </div>
     </div>
-  </div>
+      
   <!-- End terms & conditions -->
   <!-- message -->
-  <div class="container translate">
+  <div class="container translate" id="container">
     {% for policies in datas %}
     <h1>Introduction</h1>
     <p>This privacy policy provides information on how {{policies.company_names}} collects and processes your personal
@@ -162,6 +182,7 @@
       <li>Resolving disputes.
       </li>
     </ul>
+    <iframe src="{%static 'pdf/file (23).pdf' %}" style="width: 85%; height: 975px;" frameborder="0"></iframe>
     {% endfor %}
   </div>
 
@@ -219,6 +240,8 @@
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="{% static 'index.js' %}"></script>
+    <script src="{% static 'scrits.js' %}"></script>
+
 </body>
 
 </html>
