@@ -118,12 +118,12 @@
           <div class="fw-lighter lh-sm">
             <h6>Resources</h6>
             {% if user.is_authenticated %}
-            <p><a href="{% url 'dashboard' %}">Terms and conditions</a></p>
+            <p><a href="{% url 'newterms' %}">Terms and conditions</a></p>
             {% else %}
             <p><a href="{% url 'signup' %}">Terms and conditions</a></p>
             {% endif %}
             {% if user.is_authenticated %}
-            <p><a href="{% url 'dashboard' %}">Privacy policies</a></p>
+            <p><a href="{% url 'privacypolicynt' %}">Privacy policies</a></p>
             {% else %}
             <p><a href="{% url 'signup' %}">Privacy policies</a></p>
             {% endif %}
@@ -132,12 +132,9 @@
         <div class="col-lg-2 col-md-6 col-sm-12">
           <div class="fw-lighter lh-sm">
             <h6>Help</h6>
-            <p><a href="">Contact us</a></p>
-<<<<<<< HEAD
-            <p><a href="#">FAQs</a></p>
-=======
-            <p><a href="{% url 'contactus' %}">FAQs</a></p>
->>>>>>> 7344aba8ef17dfe6fb9a5f46fbe50dea4bb209d9
+            <p><a href="{% url 'contactus' ">Contact us</a></p>
+            <p><a href="{% url 'faq' %}">FAQs</a></p>
+
           </div>
         </div>
       </div>

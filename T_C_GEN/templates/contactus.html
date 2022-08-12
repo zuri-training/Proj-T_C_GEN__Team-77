@@ -170,23 +170,28 @@
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
             <h5>Company</h5>
             <ul class="list-unstyled mb-0">
-              <li>About Us</li>
-              <li>Our Termsof Use</li>
-              <li>Our privacy policies</li>
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'termsofuse' %}">Our Termsof Use</a></li>
+              <li><a href="{% url 'ourprivacypolicy' %}">Our privacy policies</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
             <h5>Resources</h5>
             <ul class="list-unstyled mb-0">
-              <li>Terms and Conditions</li>
-              <li>Privacy Policies</li>
+              {% if user.is_authenticated %}
+              <li><a href="{% url 'newterms' %}">Terms and Conditions</a></li>
+              <li><a href="{% url 'privacypolicynt' %}">Privacy Policies</a></li>
+              {% else %}
+              <li><a href="{% url 'signup' %}">Terms and Conditions</a></li>
+              <li><a href="{% url 'signup' %}">Privacy Policies</a></li>
+              {% endif %}
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
             <h5>Help</h5>
             <ul class="list-unstyled mb-0">
-              <li>Contact Us</li>
-              <li>FAQs</li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              <li><a href="{% url 'faq' %}">FAQs</a></li>
             </ul>
           </div>
         </div>
