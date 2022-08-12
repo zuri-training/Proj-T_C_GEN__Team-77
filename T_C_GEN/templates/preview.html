@@ -61,17 +61,16 @@
         <div class="row">
          
             <a class="col" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/></a>
-            <a class="col position-relative trans" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Translate"/>
+            <a class="col position-relative trans" aria-current="page" href="#"><img src="{% static 'img/translate.png' %}" alt="Translate"/>
               <div class="position-absolute pt-3 lang">
                 <p id="google_translate_element"></p> 
               </div>
-            
             </a>
          
             <a onclick="generatePDF()" class="col" href="#"><img src="{% static 'img/download.png' %}" alt="Download"/></a>
           
           <div class="col dropdown">
-            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{% static 'img/share.png' %}" alt="Share"/></a>
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{% static 'img/share.png' %}" alt="Share"/>
             <div class="dropdown-menu">
               <ul>
               <li class="dropdown-item social-share-url facebook"><i class="bi bi-facebook"></i>Facebook</li>
@@ -82,6 +81,7 @@
               <hr class="dropdown-divider">
               <li class="dropdown-item social-share-url linkedin"><i class="bi bi-linkedin"></i>LinkedIn</li>
               </ul>
+              </a>
             </div>
             </div>
         </div>
