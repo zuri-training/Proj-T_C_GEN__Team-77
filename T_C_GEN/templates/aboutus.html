@@ -29,14 +29,10 @@
             <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
           </li>
           <li class="nav-item">
-            {% if user.is_authenticated %}
-            <a class="nav-link mx-2" href="{%url 'dashboard' %}">Templates</a>
-            {% else %}
             <a class="nav-link mx-2" href="{%url 'signup'%}">Templates</a>
-            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contactus' %}">Contact us</a>
+            <a class="nav-link" href="">Contact us</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -117,15 +113,19 @@
         <div class="col-lg-2 col-md-6 col-sm-12">
           <div class="fw-lighter lh-sm">
             <h6>Resources</h6>
-            <p><a href="{% url 'termsofuse' %}">Terms and conditions</a></p>
-            <p><a href="{% url 'ourprivacypolicy' %}">Privacy policies</a></p>
+            <p><a href="{% url 'signup' %}">Terms and conditions</a></p>
+            <p><a href="{% url 'signup' %}">Privacy policies</a></p>
           </div>
         </div>
         <div class="col-lg-2 col-md-6 col-sm-12">
           <div class="fw-lighter lh-sm">
             <h6>Help</h6>
-            <p><a href="{% url 'contactus' %}">Contact us</a></p>
+            <p><a href="">Contact us</a></p>
+<<<<<<< HEAD
             <p><a href="#">FAQs</a></p>
+=======
+            <p><a href="{% url 'contactus' %}">FAQs</a></p>
+>>>>>>> 7344aba8ef17dfe6fb9a5f46fbe50dea4bb209d9
           </div>
         </div>
       </div>
