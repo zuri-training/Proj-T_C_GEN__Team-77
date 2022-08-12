@@ -20,7 +20,7 @@
         <aside>
           <div class="top">
             <div class="logo">
-              <img src="{% static 'img/logo.jpg' %}" alt="" />
+              <a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg' %}" alt="" /></a>
             </div>
             <div class="close"><i class="fa-solid fa-xmark"></i></div>
           </div>
@@ -72,6 +72,7 @@
             </div>
 
             <div class="middle-container">
+              {% if user.is_authenticated %}%}
               <div class="thi">
                 <a href="{% url 'privacypolicynt' %}"
                   ><img class="plu" src="{% static 'img/plus.png' %}" alt=""
@@ -80,6 +81,16 @@
                   <a href="{% url 'privacypolicynt' %}">PRIVACY POLICY</a>
                 </div>
               </div>
+              {% else %}
+              <div class="thi">
+                <a href="{% url 'privacypolicynt' %}"
+                  ><img class="plu" src="{% static 'img/plus.png' %}" alt=""
+                /></a>
+                <div class="privacy">
+                  <a href="{% url 'privacypolicynt' %}">PRIVACY POLICY</a>
+                </div>
+              </div>
+              {% endif %}
               <div>
                 <img class="un" src="{% static 'img/Group 30.png' %}" alt="" />
               </div>
@@ -90,8 +101,13 @@
 
       <footer>
         <div class="footer">
+          {% if user.is_authenticated %}%}
           <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
           <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+          {% else %}
+          <div><a href="{% url 'signup' %}">Privacy Policy</a></div>
+          <div><a href="{% url 'signup' %}">Terms of Use</a></div>
+          {%% endif }
         </div>
       </footer>
     </section>

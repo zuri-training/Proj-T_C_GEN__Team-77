@@ -15,12 +15,16 @@
         <div class="container">
             <aside>
                 <div class="top">
-                    <div class="logo"><img src="{% static 'img/logo.jpg' %}" alt=""></div>
+                    <a href="{% url 'index' %}"><div class="logo"><img src="{% static 'img/logo.jpg' %}" alt=""></a></div>
                     <div class="close"><i class="fa-solid fa-xmark"></i></div> 
                 </div>
                 <div class="sidebar">
                     <ul>
+                        {% if user.is_authenticated %}
                         <li class="temp"><h4><a href="{% url 'dashboard' %}">Templates</a></h4></li>
+                        {% else %}
+                        <li class="temp"><h4><a href="{% url 'signup' %}">Templates</a></h4></li>
+                        {% endif %}
                         <li class="set"><h4><a href="{% url 'settings' %}">Settings</a></h4></li>
                         <li class="logout"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
                     </ul>
@@ -111,8 +115,13 @@
                 </div>
                 <footer>
                     <div class="footer">
+                        {% if user.is_authenticated %}
                         <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
                         <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+                        {% else %}
+                        <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+                        <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+                        {% endif %}
                     </div>
                 </footer>
             </div>

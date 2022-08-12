@@ -18,16 +18,20 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <img src="{% static 'img/terms77.jpg' %}" alt="" class="pt-2">
+        <a href="{% url 'index' %}"><img src="{% static 'img/terms77.jpg' %}" alt="" class="pt-2"></a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5" style="margin: auto;">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
           </li>
           <li class="nav-item">
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'dashboard' %}">Templates</a>
+            {% else %}
             <a class="nav-link" href="{% url 'signup' %}">Templates</a>
+            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact us</a>
+            <a class="nav-link" href="{% url 'contactus' %}">Contact us</a>
           </li>
         </ul>
         {% if user.is_authenticated %}
@@ -251,15 +255,20 @@
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Resources</h6>
+              {% if user.is_authenticated %}
+              <p><a href="{% url 'newterms' %}" style="text-decoration: none;">Terms and conditions</a></p>
+              <p><a href="{% url 'privacypolicynt' %}" style="text-decoration: none;">Privacy policies</a></p>
+              {% else %}
               <p><a href="{% url 'signup' %}" style="text-decoration: none;">Terms and conditions</a></p>
               <p><a href="{% url 'signup' %}" style="text-decoration: none;">Privacy policies</a></p>
+              {% endif %}
             </div>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="fw-lighter lh-sm">
               <h6>Help</h6>
-              <p><a href="#" style="text-decoration: none;">Contact us</a></p>
-              <p><a href="{% url 'faq'%}" style="text-decoration: none;">FAQs</a></p>
+              <p><a href="{% url 'contactus' %}" style="text-decoration: none;">Contact us</a></p>
+              <p><a href="{% url 'faq' %}" style="text-decoration: none;">FAQs</a></p>
             </div>
           </div>
         </div> 
