@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'tp.css' %}">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,10 +30,34 @@
             <a class="nav-link" href="#">Contact us</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <button class="btn me-2" type="button"><a href="{% url 'signin' %}" style=" text-decoration: none">Login</a></button> 
-          <button class="btn me-2" type="button" style="background: #111F4D; color: white;"><a href="{% url 'signup' %}" style="color: white; text-decoration: none; background: #111F4D;">Sign Up</a></button>
-        </form>
+        {% if user.is_authenticated %}
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Welcome {{ user.username }}
+              </a>
+              <ul class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'settings' %}">Change password</a>
+
+                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+              </ul>
+            </div>
+
+            {% else %}
+            <form class="form-inline ml-auto">
+              <div class="container">
+                {% if user.is_authenticated %}
+                <p><a href="{% url 'logout' %}">logout</a></p>
+
+                {% else %}
+                <a href="{% url 'signin' %}" class="btn">login</a>
+                <a href="{% url 'signup' %}" class="btn text-light link-info button2"
+                  style="background-color: #111f4d;">signup</a>
+                {% endif %}
+              </div>
+
+            </form>
+            {% endif %}
       </div>
     </div>
   </nav>

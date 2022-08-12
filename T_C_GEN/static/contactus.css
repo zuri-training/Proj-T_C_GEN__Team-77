@@ -22,6 +22,9 @@ footer p{
 footer ul{
     list-style-type: none;
 }
+footer a, footer li {
+    text-decoration: none;
+}
 .foot {
     display: flex;
     flex-direction: row;
