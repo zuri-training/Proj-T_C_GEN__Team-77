@@ -1,0 +1,172 @@
+.body {
+    padding-top: 3rem;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+}
+.body-content {
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: 10px 40px;
+    width: 90%;
+}
+.body-text1 {
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 4.8rem;
+    
+}
+.body-text1 h1 {
+    margin-bottom: 0.5rem;
+    font-size: 30px;
+}
+.body-text1 p {
+    font-size: small;
+}
+.body-img1 {
+    flex: 40%;
+    padding-left: 3rem;
+}
+.body-img1 img {
+    width: 60%;
+    height: 100%;
+}
+.mission {
+    min-height: 300px;
+    background: #959BB0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mission-content {
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0px 70px;
+    width: 90%;
+}
+.mission-text {
+    flex: 40%;
+    margin: 0 auto;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mission-text h1 {
+    margin-bottom: 0.5rem;
+    font-size: 30px;
+}
+.mission-text p {
+    font-size: small;
+}
+.mission-img {
+    flex: 40%;
+}
+.mission-img img {
+    height: 100%;
+    width: 80%;
+    opacity: 0.6;
+}
+.bottom {
+    display: flex;
+    justify-content: space-around;
+}
+.bottom-text {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width:990px) {
+    .container {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .body-img1 img {
+        width: 70%;
+        height: 100%;
+    }
+}
+@media screen and (max-width:790px) {
+    .body-img1 img {
+        width: 80%;
+    }
+    .mission-img img {
+        height: 100%;
+        width: 100%;
+    }
+}
+@media screen and (max-width:670px) {
+    .body-img1 img {
+        width: 100%;
+    }
+    .mission-img img {
+        height: 100%;
+        width: 100%;
+    }
+}
+@media screen and (max-width:590px) {
+    .body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .body-content {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 0;
+        margin: 0;
+    }
+    .body-text1 {
+        padding: 0;
+        margin: 0;
+    }
+    .body-img1 {
+        margin: 0;
+        padding: 0;
+    } 
+    .body-img1 img {
+        padding: 0;
+        margin: 0;
+        width: 400px;
+        height: 300px;
+    }
+    .mission {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .mission-content {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 0;
+        margin: 0;
+    }
+    .mission-text {
+        padding: 0;
+        margin: 0;
+    }
+    .mission-img img {
+        height: 70%;
+        width: 70%;
+    }
+}
+@media screen and (max-width:458px) {
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    .body-img1 img {
+        padding: 0;
+        margin: 0;
+        width: 250px;
+        height: 200px;
+    }
+}

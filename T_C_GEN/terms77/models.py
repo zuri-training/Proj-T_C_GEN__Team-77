@@ -1,56 +1,31 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.models import User
+
 
 # Create your models here.
-class Users(models.Model):
-    Fullname = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    password = models.TextField(max_length=50)
-
-    def __str__(self):
-        return self.Fullname
 
 
-class Companies(models.Model):
-    user_id = models.IntegerField()
-    company_name = models.ForeignKey(Users, on_delete=models.CASCADE)
-    company_address = models.TextField(max_length=50)
-    country = models.TextField(max_length=50)
+class companies(models.Model):
+    # user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    company_name = models.TextField(verbose_name="Company Name", max_length=50, null=True)
+    business_platform = models.TextField(verbose_name="Business Platform", max_length=50, null=True)
+    product_service = models.TextField(verbose_name="Product Service", max_length=50, null=True)
+    company_website = models.TextField(verbose_name="Company Website", max_length=50, null=True)
 
-    def __str__(self):
-        return self.user_id
+    # def __str__(self):
+    #     return self.user
 
+class policies(models.Model):
+    # user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    company_names = models.TextField(verbose_name="Company Name", max_length=50, null=True)
+    business_platforms = models.TextField(verbose_name="Business Platform", max_length=50, null=True)
+    product_services = models.TextField(verbose_name="Product Service", max_length=50, null=True)
+    company_websites = models.TextField(verbose_name="Company Website", max_length=50, null=True)
 
-class company_policies(models.Model):
-    company_id = models.IntegerField()
-    uses_personal_info = models.BooleanField()
-    uses_user_acct = models.BooleanField()
-    uses_third_party_services = models.BooleanField()
-    uses_newsletter = models.BooleanField()
-    uses_user_upload_images = models.BooleanField()
-    uses_underage = models.BooleanField()
-    uses_ads = models.BooleanField()
-    uses_customer_data = models.BooleanField()
-    uses_retargeting_advertising = models.BooleanField()
-    uses_money = models.BooleanField()
-    promoted_company = models.BooleanField()
-
-    def __str__(self):
-        return self.company_id
+    # def __str__(self):
+    #     return self.user
+    
 
 
-class company_policy_contacts(models.Model):
-    company_id = models.IntegerField()
-    uses_email = models.BooleanField()
-    uses_website = models.BooleanField()
-
-    def __str__(self):
-        return self.company_id
 
 
-class CustomUserManager(UserManager):
-    pass
-
-
-class CustomUser(AbstractUser):
-    objects = CustomUserManager()

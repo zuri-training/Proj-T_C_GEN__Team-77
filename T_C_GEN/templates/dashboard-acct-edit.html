@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'edit.css' %}">
+    <script src="https://kit.fontawesome.com/c491194143.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <aside>
+                <div class="top">
+                    <a href="{% url 'index' %}"><div class="logo"><img src="{% static 'img/logo.jpg' %}" alt=""></a></div>
+                    <div class="close"><i class="fa-solid fa-xmark"></i></div> 
+                </div>
+                <div class="sidebar">
+                    <ul>
+                        {% if user.is_authenticated %}
+                        <li class="temp"><h4><a href="{% url 'dashboard' %}">Templates</a></h4></li>
+                        {% else %}
+                        <li class="temp"><h4><a href="{% url 'signup' %}">Templates</a></h4></li>
+                        {% endif %}
+                        <li class="set"><h4><a href="{% url 'settings' %}">Settings</a></h4></li>
+                        <li class="logout"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="main">
+                <div class="profile">
+                    <div class="bars"><i class="fa-solid fa-bars"></i></div>
+                    <div class="user">
+                        <div><i class="fa-regular fa-circle-user"></i></div>
+                        <div><span>{{user.username}}</span></div>  
+                    </div>
+                </div>
+                <div class="account">
+                    <div class="edit">
+                        <div class="sett">
+                            <h3>Account Settings (Edit)</h3>
+                        </div>
+                        <div class="success">
+                            <h5>Profile successfully updated</h5>
+                        </div>
+                    </div>
+                    <form action="dashbord_acct_edit" method="POST" id="nameform" class="form">
+                    {% csrf_token %}
+                    <div class="details">
+                       <div class="nam">
+                            <h4>Username</h4>
+                            <div class="name">
+                                <div class="current">
+                                    <label for="username">Current Username</label>
+                                    <br>
+                                    <input type="text" name="username" id="username" disabled readonly placeholder={{user.username}}>
+                                </div>
+                                <div class="inp">
+                                    <label for="username">New Username</label>
+                                    <br>
+                                    <!-- <input type="text" name="username" id="username"> -->
+                                    {{ user_form.username }}
+                                </div>
+                            </div>
+                       </div>
+                       <div class="nam">
+                            <h4>Email Address</h4>
+                            <div class="name">
+                                <div class="current">
+                                    <label for="email">Current email-address</label>
+                                    <br>
+                                    <input type="text" name="email" id="email" disabled readonly placeholder={{user.email}}>
+                                </div>
+                                <div class="inp">
+                                    <label for="email">New email-address</label>
+                                    <br>
+                                    <!-- <input type="text" name="email" id="email"> -->
+                                    {{ user_form.email }}
+                                </div>
+                            </div>
+                       </div>
+                       <div class="nam">
+                            <h4>Password</h4>
+                            <div class="name">
+                                <div class="current">
+                                    <label for="password">Current Password</label>
+                                    <br>
+                                    <input type="password" name="password" id="password" disabled readonly placeholder="***********">
+                                </div>
+                                <div class="inp">
+                                    <label for="password">New Password</label>
+                                    <br>
+                                    <input type="password" name="password" id="password">
+                                </div>
+                            </div>
+                       </div>
+                       <div class="save">
+                            <input type="submit" value="Save">
+                       </div>
+                    </div>
+                </form>orm>
+                </div>
+                <footer>
+                    <div class="footer">
+                        {% if user.is_authenticated %}
+                        <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+                        <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+                        {% else %}
+                        <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+                        <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+                        {% endif %}
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

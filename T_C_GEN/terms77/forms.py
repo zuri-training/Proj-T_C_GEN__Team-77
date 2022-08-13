@@ -1,19 +1,13 @@
-from pyexpat import model
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser
+from django.contrib.auth.models import User
+from .models import companies, policies
 
-class CustomUserCreationForm(UserCreationForm):
-
-
-    class Meta(UserCreationForm.Meta):
-        model = CustomUser
-        fields = ("first_name", "last_name",
-                  "email", "username", "password1", "password2")
-
-class CustomUserChangeForm(UserChangeForm):
-
-
+class Update(forms.ModelForm):    
     class Meta:
-        model = CustomUser
-        fields = UserChangeForm.Meta.fields
+        model = companies
+        fields = ['company_name', 'business_platform', 'product_service', 'company_website']  
+
+class Updates(forms.ModelForm):    
+    class Meta:
+        model = policies
+        fields = ['company_names', 'business_platforms', 'product_services', 'company_websites']  

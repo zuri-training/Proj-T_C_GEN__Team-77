@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'wel.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/c491194143.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <aside>
+          <div class="top">
+            <div class="logo">
+              <a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg' %}" alt="" /></a>
+            </div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
+          </div>
+          <div class="sidebar">
+            <ul>
+              <li class="temp">
+                <h4><a href="{% url 'dashboard' %}">Templates</a></h4>
+              </li>
+              <li class="set">
+                <h4><a href="{% url 'settings' %}">Settings</a></h4>
+              </li>
+              <li class="logout">
+                <h4><a href="{% url 'logout' %}">Logout</a></h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div class="main">
+          <div class="header">Welcome to Terms77</div>
+          <div class="profile">
+            <div class="bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="user">
+              <div><i class="fa-regular fa-circle-user"></i></div>
+              <div><span>{{user.username}}</span></div>
+            </div>
+          </div>
+          <div class="account">
+            <div class="policies">Policies</div>
+            <div class="pol">
+              Policies help you maintain compliance with data privacy and
+              protect your<br />business and reduce your liability.
+            </div>
+            <div class="top-container">
+              <div class="thin">
+                <a href="{% url 'newterms' %}"
+                  ><img class="plus" src="{% static 'img/plus.png' %}" alt=""
+                /></a>
+                <div class="terms">
+                  <a href="{% url 'newterms' %}">TERMS & CONDITIONS</a>
+                </div>
+              </div>
+              <div>
+                <img
+                  class="und"
+                  src="{% static 'img/undraw_reviewed_docs_re_9lmr 1.png' %}"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="middle-container">
+              {% if user.is_authenticated %}
+              <div class="thi">
+                <a href="{% url 'privacypolicynt' %}"
+                  ><img class="plu" src="{% static 'img/plus.png' %}" alt=""
+                /></a>
+                <div class="privacy">
+                  <a href="{% url 'privacypolicynt' %}">PRIVACY POLICY</a>
+                </div>
+              </div>
+              {% else %}
+              <div class="thi">
+                <a href="{% url 'privacypolicynt' %}"
+                  ><img class="plu" src="{% static 'img/plus.png' %}" alt=""
+                /></a>
+                <div class="privacy">
+                  <a href="{% url 'privacypolicynt' %}">PRIVACY POLICY</a>
+                </div>
+              </div>
+              {% endif %}
+              <div>
+                <img class="un" src="{% static 'img/Group 30.png' %}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer">
+          {% if user.is_authenticated %}
+          <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+          <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+          {% else %}
+          <div><a href="{% url 'signup' %}">Privacy Policy</a></div>
+          <div><a href="{% url 'signup' %}">Terms of Use</a></div>
+          {% endif %}
+        </div>
+      </footer>
+    </section>
+
+    <script src="{% static 'dapp.js' %}"></script>
+  </body>
+</html>
