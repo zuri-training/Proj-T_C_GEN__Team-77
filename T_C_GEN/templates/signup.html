@@ -116,8 +116,36 @@
             </div>
 
             <div class="button-field">
-              <input type="submit" class="btn1" placeholder="Sign up" />
-            </div>
+              <input type="submit" onclick="openPopup()" class="btn1"><a href="#">Sign up</a></button>
+            
+
+              <div>
+                <div class="popup center" id="wrapper4">
+                  <div class="icon">
+                      <i class="fa-solid fa-check"></i>
+                  </div>
+                  <div class="title">
+                      Awesome!
+                  </div>
+                  <div class="description">
+                      Your account has been created successfully
+                  </div>
+                  <div class="dismiss-btn">
+                      <button id="dismiss-pop">Proceed to Login</button>
+                  </div>
+              </div>
+                
+              </div>
+              </div>
+  
+              <script>
+                let popup = document.getElementById("wrapper4");
+            
+                function openPopup() {
+                  popup.classList.add("open-popup");
+                }
+              </script>
+  
 
             <p class="form-link">
               Already have an account? <a href="{% url 'signin' %}">Sign in</a>
