@@ -1,5 +1,3 @@
-import email
-from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
@@ -7,10 +5,10 @@ from django.contrib import messages
 from .models import companies, policies
 from django.db import models
 from django.conf import settings
+from .forms import Update, Updates
 
-from django.utils.datastructures import MultiValueDictKeyError
+from django.contrib.auth.decorators import login_required
 
-# from T_C_GEN.terms77.models import companies
 
 # Create your views here.
 
@@ -117,7 +115,7 @@ def newterms(request):
 
 def privacypolicynt(request):
     if request.method == "POST":
-        user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+        user = user
         company_names = request.POST["company_names"]
         business_platforms = request.POST["business_platforms"]
         product_services = request.POST["product_services"]
@@ -141,7 +139,6 @@ def privacypolicynt(request):
 def ourprivacypolicy(request):
     return render(request, "ourprivacypolicy.html", {})
 
-
 def settings(request):
     return render(request, "settings.html", {})
 
@@ -164,21 +161,30 @@ def logout(request):
 
 
 def preview(request):
-    data = companies.objects.all()
+    data = companies.objects.all().values("company_name", "business_platform", "product_service")
     context = {"data": data}
     return render(request, "preview.html", context)
 
 
 def preview2(request):
-    datas = policies.objects.all()
+    datas = policies.objects.all().values("company_names", "business_platforms", "product_services")
     context = {"datas": datas}
     return render(request, "preview2.html", context)
 
-
+@login_required
 def dashboard_acct_edit(request):
+    # if request.method == 'POST':
+    #     user_form = UpdateUserForm(request.POST, instance=request.user)
+
+    #     if user_form.is_valid():
+    #         user_form.save()
+    #         return redirect(to='settings')
+    # else:
+    #     user_form = UpdateUserForm(instance=request.user)
+
     return render(request, "dashboard-acct-edit.html", {})
 
-
+   
 def aboutus(request):
     return render(request, "aboutus.html", {})
 

@@ -72,7 +72,7 @@
             </div>
 
             <div class="middle-container">
-              {% if user.is_authenticated %}%}
+              {% if user.is_authenticated %}
               <div class="thi">
                 <a href="{% url 'privacypolicynt' %}"
                   ><img class="plu" src="{% static 'img/plus.png' %}" alt=""
@@ -101,13 +101,13 @@
 
       <footer>
         <div class="footer">
-          {% if user.is_authenticated %}%}
+          {% if user.is_authenticated %}
           <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
           <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
           {% else %}
           <div><a href="{% url 'signup' %}">Privacy Policy</a></div>
           <div><a href="{% url 'signup' %}">Terms of Use</a></div>
-          {%% endif }
+          {% endif %}
         </div>
       </footer>
     </section>

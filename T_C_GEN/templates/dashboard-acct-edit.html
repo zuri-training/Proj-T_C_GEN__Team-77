@@ -47,34 +47,22 @@
                             <h5>Profile successfully updated</h5>
                         </div>
                     </div>
+                    <form action="dashbord_acct_edit" method="POST" id="nameform" class="form">
+                    {% csrf_token %}
                     <div class="details">
-                       <div class="nam">
-                            <h4>Full Name</h4>
-                            <div class="name">
-                                <div class="current">
-                                    <label for="fullName">Current full name</label>
-                                    <br>
-                                    <input type="text" name="fullName" id="fullName" disabled readonly placeholder="Chris Gift"> 
-                                </div>
-                                <div class="inp">
-                                    <label for="fullName">New full name</label>
-                                    <br>
-                                    <input type="text" name="fullName" id="fullName">
-                                </div>
-                            </div>
-                       </div>
                        <div class="nam">
                             <h4>Username</h4>
                             <div class="name">
                                 <div class="current">
                                     <label for="username">Current Username</label>
                                     <br>
-                                    <input type="text" name="username" id="username" disabled readonly placeholder="Chrisgift">
+                                    <input type="text" name="username" id="username" disabled readonly placeholder={{user.username}}>
                                 </div>
                                 <div class="inp">
                                     <label for="username">New Username</label>
                                     <br>
-                                    <input type="text" name="username" id="username">
+                                    <!-- <input type="text" name="username" id="username"> -->
+                                    {{ user_form.username }}
                                 </div>
                             </div>
                        </div>
@@ -84,12 +72,13 @@
                                 <div class="current">
                                     <label for="email">Current email-address</label>
                                     <br>
-                                    <input type="text" name="email" id="email" disabled readonly placeholder="chris@gmail.com">
+                                    <input type="text" name="email" id="email" disabled readonly placeholder={{user.email}}>
                                 </div>
                                 <div class="inp">
                                     <label for="email">New email-address</label>
                                     <br>
-                                    <input type="text" name="email" id="email">
+                                    <!-- <input type="text" name="email" id="email"> -->
+                                    {{ user_form.email }}
                                 </div>
                             </div>
                        </div>
@@ -112,6 +101,7 @@
                             <input type="submit" value="Save">
                        </div>
                     </div>
+                </form>orm>
                 </div>
                 <footer>
                     <div class="footer">

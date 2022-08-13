@@ -4,25 +4,26 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class companies(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    company_name = models.TextField(max_length=50, default="")
-    business_platform = models.TextField(max_length=50, default="")
-    product_service = models.TextField(max_length=50, default="")
-    company_website = models.TextField(max_length=50, default="")
+    # user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    company_name = models.TextField(verbose_name="Company Name", max_length=50, null=True)
+    business_platform = models.TextField(verbose_name="Business Platform", max_length=50, null=True)
+    product_service = models.TextField(verbose_name="Product Service", max_length=50, null=True)
+    company_website = models.TextField(verbose_name="Company Website", max_length=50, null=True)
 
     # def __str__(self):
-    #     return self.company_name
+    #     return self.user
 
 class policies(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    company_names = models.TextField(max_length=50, default="")
-    business_platforms = models.TextField(max_length=50, default="")
-    product_services = models.TextField(max_length=50, default="")
-    company_websites = models.TextField(max_length=50, default="")
+    # user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    company_names = models.TextField(verbose_name="Company Name", max_length=50, null=True)
+    business_platforms = models.TextField(verbose_name="Business Platform", max_length=50, null=True)
+    product_services = models.TextField(verbose_name="Product Service", max_length=50, null=True)
+    company_websites = models.TextField(verbose_name="Company Website", max_length=50, null=True)
 
     # def __str__(self):
-    #     return self.company_names
+    #     return self.user
     
 
 
