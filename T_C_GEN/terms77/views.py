@@ -7,6 +7,7 @@ from django.db import models
 from django.conf import settings
 from .forms import Update, Updates
 
+
 from django.contrib.auth.decorators import login_required
 
 
