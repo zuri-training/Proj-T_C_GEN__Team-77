@@ -70,7 +70,8 @@
             <a onclick="generatePDF()" class="col" href="#"><img src="{% static 'img/download.png' %}" alt="Download"/></a>
           
           <div class="col dropdown">
-            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{% static 'img/share.png' %}" alt="Share"/></a>
+            <a class="col position-relative listen" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/> <div class="position-absolute pt-3 audio"><audio controls><source src="{% static 'audio/audio2.mp4'%}" type = 'audio/mp4'></audio></div>
+            </a>
             <div class="dropdown-menu">
               <ul>
               <li class="dropdown-item social-share-url twitter"><i class="bi bi-envelope-fill"></i>Twitter</li>

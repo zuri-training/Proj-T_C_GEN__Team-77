@@ -17,3 +17,9 @@ a {
 .show .lang {
   display: grid;
 }
+.audio{
+  display: none;
+}
+.play .audio{
+  display: grid;
+}

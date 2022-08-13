@@ -33,6 +33,13 @@ function googleTranslateElementInit() {
     );
 }
 
+
+const listen = document.querySelector (".listen")
+
+listen.addEventListener('click', () => {
+    listen.classList.toggle("play")
+})
+
 // function googleTranslateElementInit() {
 //     new google.translate.TranslateElement(
 //         {pageLanguage: 'en'},

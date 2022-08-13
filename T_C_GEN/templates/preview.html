@@ -60,7 +60,8 @@
           
         <div class="row">
          
-            <a class="col" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/></a>
+            <a class="col position-relative listen" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/> <div class="position-absolute pt-3 audio"><audio controls><source src="{% static 'audio/audio.mp4'%}" type = 'audio/mp4'></audio></div>
+            </a>
             <a class="col position-relative trans" aria-current="page" href="#"><img src="{% static 'img/translate.png' %}" alt="Translate"/>
               <div class="position-absolute pt-3 lang">
                 <p id="google_translate_element"></p> 
