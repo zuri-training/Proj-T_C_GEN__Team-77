@@ -145,7 +145,7 @@
                   popup.classList.add("open-popup");
                 }
               </script>
-  
+                
 
             <p class="form-link">
               Already have an account? <a href="{% url 'signin' %}">Sign in</a>
@@ -155,6 +155,20 @@
       </aside>
     </section>
 
+    <script>
+
+      const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+      
+        togglePassword.addEventListener('click', function (e) {
+          // toggle the type attribute
+          const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+          password.setAttribute('type', type);
+          // toggle the eye slash icon
+          this.classList.toggle('fa-eye-slash');
+      });
+          </script>
+      
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
   </body>
