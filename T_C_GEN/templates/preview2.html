@@ -20,34 +20,78 @@
 <!-- body -->
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white notranslate fixed-top mb-5">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top notranslate">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="{% url 'index' %}"
+        ><img src="{% static 'img/terms77.jpg' %}" class="p-2" alt=""
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a href="{% url 'index' %}"><img src="{% static 'img/terms77.jpg' %}" alt="" class="pt-2" /></a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5" style="margin: auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'aboutus' %}">About us</a>
+            <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}"
+              >About us</a
+            >
           </li>
-          <li> {% if user.is_authenticated %}
-          <a class="nav-link mx-2 link" href="{% url 'dashboard'%}">Templates</a>
-           {% else %}
-           <a class="nav-link mx-2 link" href="{% url 'signup'%}">Templates</a>
-          {% endif %} </li>
+
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'dashboard' %}">Templates</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'signup' %}">Templates</a>
+          </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contactus' %}">Contact us</a>
           </li>
         </ul>
-        <form class="d-flex"> <a href="{% url 'dashboard' %}">
-            <button class="btn me-2" type="button" style="background: red; color: white">
-              Cancel
-            </button></a>
-        </form>
+        <form class="d-flex">
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            {% if user.is_authenticated %}
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                {{ user.username }}
+              </a>
+              <ul class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'settings' %}">Change password</a>
+
+                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+              </ul>
+            </div>
+
+            {% else %}
+            <form class="form-inline ml-auto">
+              <div class="container">
+                {% if user.is_authenticated %}
+                <p><a href="{% url 'logout' %}">logout</a></p>
+
+                {% else %}
+                <a href="{% url 'signin' %}" class="btn">login</a>
+                <a href="{% url 'signup' %}" class="btn text-light link-info button2"
+                  style="background-color: #111f4d">signup</a>
+                {% endif %}
+              </div>
+
+            </form>
+            {% endif %}
+
+          </div>
+
+
+        </div>
       </div>
-    </div>
+    
   </nav>
   <!-- terms & conditions -->
   <p class="text-center notranslate pt-5">
