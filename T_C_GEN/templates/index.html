@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
 
         <div class="navbar-nav" style="margin: auto;">
-          <a class="nav-link mx-2 link" aria-current="page" href="{%url 'aboutus' %}">About us</a>
+          <a class="nav-link mx-2 link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
           {% if user.is_authenticated %}
           <a class="nav-link mx-2 link" href="{% url 'dashboard'%}">Templates</a>
            {% else %}
@@ -318,50 +318,51 @@
 
 
   </main>
-  <footer class="text-light mt-5 p-2">
-    <div class="container p-4 my-5 mx-auto">
-      <div class="row">
-        <div class="col col-lg-4 col-md-6 p-2">
-          <h5> Terms77</h5>
-          <p>
-            We are a full-service law firm that specializes in creating customized Privacy Policies and Terms &
-            Conditions faster to keep your business safe from any legal issue.
+  <footer class="container-fluid mt-3" style="background-color: #111F4D; color:white">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <h5 class="fw-bold">Terms77</h5>
+          <p class="text-white">We are a full-service law firm that specializes in creating customized Privacy Policies and 
+            Terms & Conditions faster to keep your business safe from any legal issue.
           </p>
         </div>
-        <div class="col-sm-12 col-lg-2 col-md-4 p-2">
-          <div>
-            <h4>Company</h4>
+        <div class="col-lg-2 col-md-6 col-sm-12">
+          <div class="text-white lh-sm">
+            <h6 class="fw-bold">Company</h6>
+            <p><a href="{% url 'aboutus' %}" class="text-white" style="text-decoration: none;"> About us</a></p>
+            <p><a href="{% url 'termsofuse' %}" class="text-white" style="text-decoration: none;">Our Terms of use</a></p>
+            <p><a href="{% url 'ourprivacypolicy' %}" class="text-white" style="text-decoration: none;">Our Privacy policies</a></p>
           </div>
-          <p><a class="text-light link-info" href="{% url 'aboutus' %}"> About us</a></p>
-          <p><a class="text-light link-info" href="{% url 'termsofuse' %}"> Our Terms of use</a></p>
-          <p><a class="text-light link-info" href="{% url 'ourprivacypolicy' %}">Our Privacy Policy</p></a>
         </div>
-        <div class="col-sm-12 col-lg-2 col-md-6 p-2">
-          <div>
-            <h4>Resources</h4>
 
+        <div class="col-lg-2 col-md-6 col-sm-12">
+          <div class="text-white lh-sm">
+            <h6 class="fw-bold">Resources</h6>
+            {% if user.is_authenticated %}
+            <p><a href="{% url 'newterms' %}" class="text-white" style="text-decoration: none;">Terms and conditions</a></p>
+            <p><a href="{% url 'privacypolicynt' %}" class="text-white" style="text-decoration: none;">Privacy policies</a></p>
+            {% else %}
+            <p><a href="{% url 'signup' %}" class="text-white" style="text-decoration: none;">Terms and conditions</a></p>
+            <p><a href="{% url 'signup' %}" class="text-white" style="text-decoration: none;">Privacy policies</a></p>
+            {% endif %}
           </div>
-          {% if user.is_authenticated %}
-          <p><a class="text-light link-info" href="{% url 'newterms' %}"> Terms and conditions</a></p>
-          <p><a class="text-light link-info" href="{% url 'privacypolicynt' %}"> Privacy policies</a></p>
-          {% else %}
-          <p><a class="text-light link-info" href="{% url 'signup' %}"> Terms and conditions</a></p>
-          <p><a class="text-light link-info" href="{% url 'signup' %}"> Privacy policies</a></p>
-          {% endif %}
         </div>
-        <div class="col-sm-12 col-lg-2 col-md-5 p-2">
-          <div>
-            <h4> Help</h4>
+        <div class="col-lg-2 col-md-6 col-sm-12">
+          <div class="text-white lh-sm">
+            <h6 class="fw-bold">Help</h6>
+            <p><a href="{% url 'contactus' %}" class="text-white" style="text-decoration: none;">Contact us</a></p>
+            <p><a href="{% url 'faq' %}" class="text-white" style="text-decoration: none;">FAQs</a></p>
           </div>
-          <p><a class="text-light link-info" href="{% url 'contactus' %}"> Contact us</a></p>
-          <p><a class="text-light link-info" href="{% url 'faq' %}"> FAQs</a></p>
         </div>
+      </div> 
+    </div>
+    <div class="row text-center">
+      <div class="col-12" style="border-top: 1px #959BB0 solid; width: 100%;">
+        <p class="py-2 text-white">All right reserved 2022</p>
       </div>
     </div>
-    <hr>
-    <div class="container p-3">
-      <h6 class="text-center justify-content-center align-center">All rights reserved 2022</h6>
-    </div>
+  
   </footer>
 
 

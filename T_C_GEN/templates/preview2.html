@@ -63,21 +63,20 @@
           
         <div class="row">
          
-            <a class="col" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/></a>
+            <a class="col position-relative listen" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/> <div class="position-absolute pt-3 audio"><audio controls><source src="{% static 'audio/audio.mp4'%}" type = 'audio/mp4'></audio></div>
+            </a>
             <a class="col position-relative trans" aria-current="page" href="#"><img src="{% static 'img/translate.png' %}" alt="Translate"/>
               <div class="position-absolute pt-3 lang">
                 <p id="google_translate_element"></p> 
               </div>
-            
             </a>
          
             <a onclick="generatePDF()" class="col" href="#"><img src="{% static 'img/download.png' %}" alt="Download"/></a>
           
           <div class="col dropdown">
-            <a class="col position-relative listen" aria-current="page" href="#"><img src="{% static 'img/listen.png' %}" alt="Audio"/> <div class="position-absolute pt-3 audio"><audio controls><source src="{% static 'audio/audio2.mp4'%}" type = 'audio/mp4'></audio></div>
-            </a>
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{% static 'img/share.png' %}" alt="Share"/>
             <div class="dropdown-menu">
-              <ul>
+              <ul>              
               <li class="dropdown-item social-share-url twitter"><i class="bi bi-envelope-fill"></i>Twitter</li>
               <hr class="dropdown-divider">
               <li class="dropdown-item social-share-url whatsapp"><i class="bi bi-whatsapp"></i>Whatsapp</li>
@@ -85,7 +84,9 @@
               <li class="dropdown-item social-share-url linkedin"><i class="bi bi-linkedin"></i>LinkedIn</li>
               <hr class="dropdown-divider">
               <li class="dropdown-item social-share-url facebook"><i class="bi bi-facebook"></i>Facebook</li>
-              </ul>          
+              
+              </ul>
+              </a>
             </div>
             </div>
         </div>
@@ -191,46 +192,51 @@
   </div>
 
   <!-- Footer -->
-  <footer class="container-fluid notranslate" style="background-color: #111f4d; color: white">
+  <footer class="container-fluid mt-3" style="background-color: #111F4D; color:white">
     <div class="container">
       <div class="row py-5">
         <div class="col-lg-6 col-md-6 col-sm-12">
-          <h5>Terms77</h5>
-          <p class="fw-lighter">
-            We are a full-service law firm that specializes in creating
-            customized Privacy Policies and Terms & Conditions faster to keep
-            your business safe from any legal issue.
+          <h5 class="fw-bold">Terms77</h5>
+          <p class="text-white">We are a full-service law firm that specializes in creating customized Privacy Policies and 
+            Terms & Conditions faster to keep your business safe from any legal issue.
           </p>
         </div>
         <div class="col-lg-2 col-md-6 col-sm-12">
-          <div class="fw-lighter lh-sm">
-            <h6>Company</h6>
-            <p><a href="{% url 'aboutus' %}">About us</a></p>
-            <p><a href="{% url 'termsofuse' %}">Our Terms of use</a></p>
-            <p><a href="{% url 'ourprivacypolicy' %}">Our Privacy policies</a></p>
+          <div class="text-white lh-sm">
+            <h6 class="fw-bold">Company</h6>
+            <p><a href="{% url 'aboutus' %}" class="text-white" style="text-decoration: none;"> About us</a></p>
+            <p><a href="{% url 'termsofuse' %}" class="text-white" style="text-decoration: none;">Our Terms of use</a></p>
+            <p><a href="{% url 'ourprivacypolicy' %}" class="text-white" style="text-decoration: none;">Our Privacy policies</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-12">
+          <div class="text-white lh-sm">
+            <h6 class="fw-bold">Resources</h6>
+            {% if user.is_authenticated %}
+            <p><a href="{% url 'newterms' %}" class="text-white" style="text-decoration: none;">Terms and conditions</a></p>
+            <p><a href="{% url 'privacypolicynt' %}" class="text-white" style="text-decoration: none;">Privacy policies</a></p>
+            {% else %}
+            <p><a href="{% url 'signup' %}" class="text-white" style="text-decoration: none;">Terms and conditions</a></p>
+            <p><a href="{% url 'signup' %}" class="text-white" style="text-decoration: none;">Privacy policies</a></p>
+            {% endif %}
           </div>
         </div>
         <div class="col-lg-2 col-md-6 col-sm-12">
-          <div class="fw-lighter lh-sm">
-            <h6>Resources</h6>
-            <p><a href="{% url 'newterms' %}">Terms and conditions</a></p>
-            <p><a href="{% url 'privacypolicynt' %}">Privacy policies</a></p>
+          <div class="text-white lh-sm">
+            <h6 class="fw-bold">Help</h6>
+            <p><a href="{% url 'contactus' %}" class="text-white" style="text-decoration: none;">Contact us</a></p>
+            <p><a href="{% url 'faq' %}" class="text-white" style="text-decoration: none;">FAQs</a></p>
           </div>
         </div>
-        <div class="col-lg-2 col-md-6 col-sm-12">
-          <div class="fw-lighter lh-sm">
-            <h6>Help</h6>
-            <p><a href="#">Contact us</a></p>
-            <p><a href="{% url 'faq' %}" class="">FAQs</a></p>
-          </div>
-        </div>
-      </div>
+      </div> 
     </div>
     <div class="row text-center">
-      <div class="col-12" style="border-top: 1px #959bb0 solid; width: 100%">
-        <p class="py-2">All right reserved 2022</p>
+      <div class="col-12" style="border-top: 1px #959BB0 solid; width: 100%;">
+        <p class="py-2 text-white">All right reserved 2022</p>
       </div>
     </div>
+  
   </footer>
   <!-- End footer -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
