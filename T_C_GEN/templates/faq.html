@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'faq.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}" />
   </head>
 
   <!-- body -->
@@ -319,9 +319,11 @@
         <button
           type="button"
           class="btn btn-secondary"
-          style="color: #111f4d; background-color: white; margin-right: 2em"
+          style="background-color: white; margin-right: 2em"
         >
-          Get in touch
+          <a href="{% url 'contactus' %}" style="color: #111f4d">
+            Get in touch</a
+          >
         </button>
       </section>
     </main>

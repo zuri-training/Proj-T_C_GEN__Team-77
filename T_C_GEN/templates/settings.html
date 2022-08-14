@@ -2,65 +2,86 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="https://kit.fontawesome.com/c491194143.js" crossorigin="anonymous"></script>
-    <title>Settings</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/c491194143.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Account Settings</title>
+  </head>
+  <body>
     <section>
-        <div class="container">
-            <aside>
-                <div class="top">
-                    <div class="logo" style="margin:auto;"><a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg' %}" alt=""></a></div>
-                    <div class="close"><i class="fa-solid fa-xmark"></i></div> 
-                </div>
-                <div class="sidebar">
-                    <ul>
-                        <li class="temp"><h4><a href="{% url 'dashboard' %}">Templates</a></h4></li>
-                        <li class="set"><h4><a href="{% url 'settings' %}">Settings</a></h4></li>
-                        <li class="logout"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
-                    </ul>
-                </div>
-            </aside>
-            <div class="main">
-                <div class="profile">
-                    <div class="bars"><i class="fa-solid fa-bars"></i></div>
-                    <div class="user">
-                        <div><i class="fa-regular fa-circle-user"></i></div>
-                        <div><span>{{user.username}}</span></div>  
-                    </div>
-                </div>
-                <div class="account">
-                    <div class="edit">
-                        <div class="sett">
-                            <h3>Account Settings</h3>
-                        </div>
-                        <div class="editt">
-                            <a href="{% url 'dashboard_acct_edit' %}"><i class="fa-solid fa-pen-to-square"></i><br><p>Edit</p></a> 
-                        </div>
-                    </div>
-                    <div class="details">
-                        <p class="fw-bold">Username</p> <p class="detail">{{user.username}}</p>
-                        <br>
-                        <p class="fw-bold">Email Address</p> <p class="detail">{{user.email}}</p>
-                        <br>
-                        <p class="fw-bold">Password</p> <p class="detail">***********</p>
-                    </div>
-                </div>
-                <footer>
-                    <div class="footer">
-                        <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
-                        <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
-                    </div>
-                </footer>
+      <div class="container">
+        <aside>
+          <div class="top">
+            <div class="logo" style="margin: auto">
+              <a href="{% url 'index' %}"
+                ><img src="{% static 'img/logo.jpg' %}" alt=""
+              /></a>
             </div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
+          </div>
+          <div class="sidebar">
+            <ul>
+              <li class="temp">
+                <h4><a href="{% url 'dashboard' %}">Templates</a></h4>
+              </li>
+              <li class="set">
+                <h4><a href="{% url 'settings' %}">Settings</a></h4>
+              </li>
+              <li class="logout">
+                <h4><a href="{% url 'logout' %}">Logout</a></h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div class="main">
+          <div class="profile">
+            <div class="bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="user">
+              <div><i class="fa-regular fa-circle-user"></i></div>
+              <div><span>{{user.username}}</span></div>
+            </div>
+          </div>
+          <div class="account">
+            <div class="edit">
+              <div class="sett">
+                <h3>Account Settings</h3>
+              </div>
+              <div class="editt">
+                <a href="{% url 'dashboard_acct_edit' %}"
+                  ><i class="fa-solid fa-pen-to-square"></i><br />
+                  <p>Edit</p></a
+                >
+              </div>
+            </div>
+            <div class="details">
+              <p class="fw-bold">Username</p>
+              <p class="detail">{{user.username}}</p>
+              <br />
+              <p class="fw-bold">Email Address</p>
+              <p class="detail">{{user.email}}</p>
+              <br />
+              <p class="fw-bold">Password</p>
+              <p class="detail">***********</p>
+            </div>
+          </div>
+          <footer>
+            <div class="footer">
+              <div>
+                <a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a>
+              </div>
+              <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+            </div>
+          </footer>
         </div>
+      </div>
     </section>
 
     <script src="{% static 'app.js' %}"></script>
-</body>
+  </body>
 </html>
