@@ -93,7 +93,7 @@ def forgotpass(request):
 
 def newterms(request):
     if request.method == "POST":
-        user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+        user = models.ForeignKey(user, on_delete=models.CASCADE, blank=True, null=True)
         company_name = request.POST["company_name"]
         business_platform = request.POST["business_platform"]
         product_service = request.POST["product_service"]
@@ -116,7 +116,9 @@ def newterms(request):
 
 def privacypolicynt(request):
     if request.method == "POST":
-        user = user
+        # users = models.ForeignKey(
+        #     users, on_delete=models.CASCADE, blank=True, null=True
+        # )
         company_names = request.POST["company_names"]
         business_platforms = request.POST["business_platforms"]
         product_services = request.POST["product_services"]
@@ -140,6 +142,7 @@ def privacypolicynt(request):
 def ourprivacypolicy(request):
     return render(request, "ourprivacypolicy.html", {})
 
+
 def settings(request):
     return render(request, "settings.html", {})
 
@@ -162,15 +165,20 @@ def logout(request):
 
 
 def preview(request):
-    data = companies.objects.all().values("company_name", "business_platform", "product_service")
+    data = companies.objects.all().values(
+        "company_name", "business_platform", "product_service"
+    )
     context = {"data": data}
     return render(request, "preview.html", context)
 
 
 def preview2(request):
-    datas = policies.objects.all().values("company_names", "business_platforms", "product_services")
+    datas = policies.objects.all().values(
+        "company_names", "business_platforms", "product_services"
+    )
     context = {"datas": datas}
     return render(request, "preview2.html", context)
+
 
 @login_required
 def dashboard_acct_edit(request):
@@ -185,7 +193,7 @@ def dashboard_acct_edit(request):
 
     return render(request, "dashboard-acct-edit.html", {})
 
-   
+
 def aboutus(request):
     return render(request, "aboutus.html", {})
 
