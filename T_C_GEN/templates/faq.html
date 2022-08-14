@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'faq.css' %}"/>
+    <link rel="stylesheet" href="{% static 'faq.css' %}" />
   </head>
 
   <!-- body -->
@@ -43,13 +43,20 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg'%}" alt="" class="pt-2" /></a>
+            <a href="{% url 'index' %}"
+              ><img src="{% static 'img/logo.jpg'%}" alt="" class="pt-2"
+            /></a>
             <ul
               class="navbar-nav me-auto mb-2 mb-lg-0 px-5"
               style="margin: auto"
             >
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="{% url 'aboutus' %}"
+                  >About us</a
+                >
               </li>
               <li class="nav-item">
                 {% if user.is_authenticated %}
@@ -64,12 +71,20 @@
             </ul>
             {% if user.is_authenticated %}
             <div class="dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="userMenu"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Welcome {{ user.username }}
               </a>
               <ul class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'settings' %}">Change password</a>
+                <a class="dropdown-item" href="{% url 'settings' %}"
+                  >Change password</a
+                >
 
                 <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
               </ul>
@@ -83,11 +98,14 @@
 
                 {% else %}
                 <a href="{% url 'signin' %}" class="btn">login</a>
-                <a href="{% url 'signup' %}" class="btn text-light link-info button2"
-                  style="background-color: #111f4d;">signup</a>
+                <a
+                  href="{% url 'signup' %}"
+                  class="btn text-light link-info button2"
+                  style="background-color: #111f4d"
+                  >signup</a
+                >
                 {% endif %}
               </div>
-
             </form>
             {% endif %}
           </div>
@@ -112,7 +130,7 @@
                   style="border-right: none; background-color: white"
                 >
                   <i class="material-icons">
-                    <img src="{%static 'img/search.jpg'%"} alt="" /> </i
+                    <img src="{%static 'img/search.jpg'%" } alt="" /> </i
                 ></span>
                 <input
                   type="text"
@@ -266,7 +284,7 @@
             aria-controls="multiCollapseExample5"
             style="cursor: pointer"
           >
-            <img src="{%static 'img/add.jpg' %}" alt="Add image"/>
+            <img src="{%static 'img/add.jpg' %}" alt="Add image" />
             <strong
               >Are your terms and conditions, privacy policy unique to each
               user?</strong
@@ -309,21 +327,48 @@
     </main>
 
     <!-- Footer -->
-    <footer class="container-fluid mt-3" style="background-color: #111F4D; color:white">
+    <footer
+      class="container-fluid mt-3"
+      style="background-color: #111f4d; color: white"
+    >
       <div class="container">
         <div class="row py-5">
           <div class="col-lg-6 col-md-6 col-sm-12">
             <h5 class="fw-bold">Terms77</h5>
-            <p class="text-white">We are a full-service law firm that specializes in creating customized Privacy Policies and 
-              Terms & Conditions faster to keep your business safe from any legal issue.
+            <p class="text-white">
+              We are a full-service law firm that specializes in creating
+              customized Privacy Policies and Terms & Conditions faster to keep
+              your business safe from any legal issue.
             </p>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="text-white lh-sm">
               <h6 class="fw-bold">Company</h6>
-              <p><a href="{% url 'aboutus' %}" class="text-white" style="text-decoration: none;"> About us</a></p>
-              <p><a href="{% url 'termsofuse' %}" class="text-white" style="text-decoration: none;">Our Terms of use</a></p>
-              <p><a href="{% url 'ourprivacypolicy' %}" class="text-white" style="text-decoration: none;">Our Privacy policies</a></p>
+              <p>
+                <a
+                  href="{% url 'aboutus' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                >
+                  About us</a
+                >
+              </p>
+              <p>
+                <a
+                  href="{% url 'termsofuse' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Our Terms of use</a
+                >
+              </p>
+              <p>
+                <a
+                  href="{% url 'ourprivacypolicy' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Our Privacy policies</a
+                >
+              </p>
             </div>
           </div>
 
@@ -331,29 +376,70 @@
             <div class="text-white lh-sm">
               <h6 class="fw-bold">Resources</h6>
               {% if user.is_authenticated %}
-              <p><a href="{% url 'newterms' %}" class="text-white" style="text-decoration: none;">Terms and conditions</a></p>
-              <p><a href="{% url 'privacypolicynt' %}" class="text-white" style="text-decoration: none;">Privacy policies</a></p>
+              <p>
+                <a
+                  href="{% url 'newterms' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Terms and conditions</a
+                >
+              </p>
+              <p>
+                <a
+                  href="{% url 'privacypolicynt' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Privacy policies</a
+                >
+              </p>
               {% else %}
-              <p><a href="{% url 'signup' %}" class="text-white" style="text-decoration: none;">Terms and conditions</a></p>
-              <p><a href="{% url 'signup' %}" class="text-white" style="text-decoration: none;">Privacy policies</a></p>
+              <p>
+                <a
+                  href="{% url 'signup' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Terms and conditions</a
+                >
+              </p>
+              <p>
+                <a
+                  href="{% url 'signup' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Privacy policies</a
+                >
+              </p>
               {% endif %}
             </div>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12">
             <div class="text-white lh-sm">
               <h6 class="fw-bold">Help</h6>
-              <p><a href="{% url 'contactus' %}" class="text-white" style="text-decoration: none;">Contact us</a></p>
-              <p><a href="{% url 'faq' %}" class="text-white" style="text-decoration: none;">FAQs</a></p>
+              <p>
+                <a
+                  href="{% url 'contactus' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >Contact us</a
+                >
+              </p>
+              <p>
+                <a
+                  href="{% url 'faq' %}"
+                  class="text-white"
+                  style="text-decoration: none"
+                  >FAQs</a
+                >
+              </p>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
       <div class="row text-center">
-        <div class="col-12" style="border-top: 1px #959BB0 solid; width: 100%;">
+        <div class="col-12" style="border-top: 1px #959bb0 solid; width: 100%">
           <p class="py-2 text-white">All right reserved 2022</p>
         </div>
       </div>
-    
     </footer>
 
     <script
