@@ -93,7 +93,7 @@ def forgotpass(request):
 
 def newterms(request):
     if request.method == "POST":
-        user = models.ForeignKey(user, on_delete=models.CASCADE, blank=True, null=True)
+        user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
         company_name = request.POST["company_name"]
         business_platform = request.POST["business_platform"]
         product_service = request.POST["product_service"]
