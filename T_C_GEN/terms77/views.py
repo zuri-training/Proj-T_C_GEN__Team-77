@@ -158,7 +158,7 @@ def step3(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect("/")
+    return render(request, "index.html", {})
 
 
 def preview(request):
