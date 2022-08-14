@@ -179,15 +179,19 @@ aside {
   }
   
   .thi{
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* display: flex; */
+    /* flex-direction: column; */
   }
 
   .plu{
-      width: 24px;
-      position: absolute;
-      left: 470px;
-      top: 590px;
+      width: 5%;
+      /* position: absolute; */
+      /* left: 470px;
+      top: 590px; */
+      text-align: center;
   }
 
   
@@ -251,6 +255,9 @@ aside {
     .container {
         display: block;
         
+    }
+    .und, .un {
+      display: none;
     }
     
     aside {
@@ -321,7 +328,7 @@ aside {
       .pol{
         
         font-size: 23px;
-        white-space: pre;
+        /* white-space: pre; */
         line-height:normal;
       }
     
