@@ -16,7 +16,7 @@
     <title>Contact Us</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top mb-5">
       <div class="container">
         <a class="navbar-brand" href="{% url 'index' %}"
           ><img
@@ -85,22 +85,24 @@
       </div>
     </nav>
 
-    <main class="pt-5">
-      <div class="text-center">
+    <main class="">
+      <section class="m-3 p-5 text-center">
+      <div class="mt-5 p-5">
         <img
           src="{% static 'img/Group 61.jpg' %}"
-          class="img-fluid"
+          class=""
           alt="contactimg"
         />
       </div>
+    </section>
       <hr />
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col">
-            <h6 class="fw-bold">SEND US AN EMAIL:</h6>
-            <p>ENQUIRE FROM US, WE'LL GET BACK TO YOU IN 24HRS!</p>
+        <div class="row justify-content-between">
+          <div class="col m-3 me-4">
+            <h6 class="fw-bold mb-3">SEND US AN EMAIL:</h6>
+            <p class="mb-3">ENQUIRE FROM US, WE'LL GET BACK TO YOU IN 24HRS!</p>
             <form>
-              <div class="form-group">
+              <div class="form-group mb-3">
                 <label for="name"> <strong> NAME:</strong></label
                 ><br />
                 <input
@@ -108,55 +110,59 @@
                   id="name"
                   name="name"
                   placeholder="John Doe"
+                  style="width: 95%;"
                 /><br />
               </div>
-              <div class="form-group">
+              <div class="form-group mb-3">
                 <label for="email"><strong>EMAIL:</strong> </label><br />
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="johndoe@email.com"
+                  style="width: 95%;"
                 /><br />
               </div>
               <div class="form-group">
-                <label for="howcan"
+                <label for="howcan" class="mb-3"
                   ><strong>HOW CAN WE HELP YOU?</strong> </label
                 ><br />
                 <textarea
                   name="howcan"
                   id="howcan"
                   cols="30"
-                  rows="10"
+                  rows="6"
+                  style="width: 95%;"
+                  class="mb-2"
                 ></textarea
                 ><br />
               </div>
               <button
                 type="submit"
-                class="btn btn-primary"
-                style="background-color: #111f4d"
+                class="btn btn-primary mb-5"
+                style="background-color: #111f4d; width: 65%;";
               >
                 SEND
               </button>
             </form>
           </div>
           <div class="col">
-            <div class="givefeedback">
-              <h2>Give your feedback</h2>
+            <div class="givefeedback border border-dark border-3 border-opacity-50 p-3">
+              <h5 class="fw-bold">Give a feedback</h5>
               <p>
                 We would love to hear your experience while using our website,
                 to improve our services
               </p>
-              <textarea
+              <div class="text-center"><textarea
                 name="feedback"
                 id="feedback"
-                cols="30"
-                rows="10"
+                cols="45"
+                rows="5"
               ></textarea
-              ><br />
-              <button class="btn btn-primary" style="background-color: #111f4d">
+              ><br><br>
+              <button class="btn btn-primary mb-4" style="background-color: #111f4d; width: 40%;">
                 SEND
-              </button>
+              </button></div>
             </div>
           </div>
         </div>

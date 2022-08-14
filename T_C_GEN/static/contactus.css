@@ -1,11 +1,11 @@
-*{
+/* *{
     box-sizing: border-box;
-}
+} */
 
-.container{
+/* .container{
     display: flex;
     flex-direction: row;
-}
+} */
 
 .btn-primary{
     
