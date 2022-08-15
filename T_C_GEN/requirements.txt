@@ -1,5 +1,4 @@
 asgiref==3.5.2
-backports.zoneinfo==0.2.1
 certifi==2022.5.18.1
 distlib==0.3.4
 Django==4.0.7
@@ -10,3 +9,4 @@ sqlparse==0.4.2
 tzdata==2022.1
 virtualenv==20.14.1
 virtualenv-clone==0.5.7
+backports.zoneinfo==0.2.1;python_version<"3.9"
