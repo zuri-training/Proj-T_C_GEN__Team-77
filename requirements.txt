@@ -1,10 +1,9 @@
 asgiref==3.5.2
-# backports.zoneinfo==0.2.1
+backports.zoneinfo==0.2.1
 certifi==2022.5.18.1
 distlib==0.3.4
 Django==4.0.7
 filelock==3.7.1
-pipenv==2022.6.7
 platformdirs==2.5.2
 six==1.16.0
 sqlparse==0.4.2
