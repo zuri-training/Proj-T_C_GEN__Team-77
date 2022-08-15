@@ -1,0 +1,1 @@
+web gunicorn qrCode_Project.wsgi:application --log-file -
