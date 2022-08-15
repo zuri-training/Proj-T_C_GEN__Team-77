@@ -1,0 +1,94 @@
+
+
+:root {
+  --footer_color: #111f4d;
+}
+
+
+
+nav button, footer, .button1, .benefits, .section1 button {
+  background-color: var(--footer_color);
+}
+
+.button2:hover {
+  opacity: 75%;
+}
+
+.link:hover {
+font-weight: bold;
+}
+
+ .steps {
+  border: 1px solid black;
+ }
+
+ .eachstep {
+  height: 100%;
+  align-content: space-around;
+  padding: 5%;
+  margin: auto;
+ }
+ .step2 {
+  padding-top: 20%;
+ }
+
+ .step4 {
+  padding-top: 10%;
+ }
+
+
+.pic4 {
+  width: 250px;
+}
+
+section {
+  margin-top: 5rem;
+  }
+
+footer a {
+text-decoration: none;
+}
+
+.right, .left {
+width: 80%;
+}
+
+.picture {
+width: 100%
+}
+
+.section1 i {
+font-size: xx-large;
+}
+
+.stars {
+font-size: small;
+color: gold;
+}
+
+@media only screen and (min-width:1200px) {
+
+  .benefits:hover, .testimonials:hover {
+  width: 30%;
+  transform: scale(1.2);
+  position: relative;
+  z-index: 1;
+  }
+
+  .benefits, .testimonials {
+  transition: transform 2s;
+  }
+}
+/* 
+i{
+  font-size: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+
+
+
