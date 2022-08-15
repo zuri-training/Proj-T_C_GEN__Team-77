@@ -37,6 +37,10 @@ function  setShareLinks() {
         url = "https://wa.me/?text=" +pageUrl;
         socialWindowScreen(url);
     })
+<<<<<<< HEAD
 }
 
 
+=======
+}
+>>>>>>> 79d6a2dab39cf49bcd7cd6df41fc4cc3c5d44f50

@@ -1,3 +1,6 @@
+main {
+  font-family: "Inter", sans-serif;
+}
 p.fw-lighter {
   color: #959bb0;
 }
@@ -10,17 +13,4 @@ footer p {
 }
 a {
   text-decoration: none;
-}
-
-.lang {
-  display: none;
-}
-.show .lang {
-  display: grid;
-}
-.audio{
-  display: none;
-}
-.play .audio{
-  display: grid;
 }

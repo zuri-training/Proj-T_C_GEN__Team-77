@@ -6,12 +6,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'wel.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/wel.css' %}" />
     <script
       src="https://kit.fontawesome.com/c491194143.js"
       crossorigin="anonymous"
     ></script>
-    <title>Dashboard</title>
+    <title>Terms77 - Dashboard</title>
   </head>
 
   <body>
@@ -19,8 +19,10 @@
       <div class="container">
         <aside>
           <div class="top">
-            <div class="logo" style="margin:auto;">
-              <a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg' %}" alt="" /></a>
+            <div class="logo" style="margin: auto">
+              <a href="{% url 'index' %}"
+                ><img src="{% static 'img/logo.jpg' %}" alt=""
+              /></a>
             </div>
             <div class="close"><i class="fa-solid fa-xmark"></i></div>
           </div>
@@ -51,7 +53,7 @@
             <div class="policies">Policies</div>
             <div class="pol">
               Policies help you maintain compliance with data privacy and
-              protect your<br />business and reduce your liability.
+              protect your business and reduce your liability.
             </div>
             <div class="top-container">
               <div class="thin">
@@ -112,6 +114,6 @@
       </footer>
     </section>
 
-    <script src="{% static 'dapp.js' %}"></script>
+    <script src="{% static 'js/dapp.js' %}"></script>
   </body>
 </html>

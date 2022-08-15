@@ -54,7 +54,11 @@ width: 80%;
 }
 
 .picture {
+<<<<<<< HEAD
 width: 100%
+=======
+width: 100%;
+>>>>>>> 79d6a2dab39cf49bcd7cd6df41fc4cc3c5d44f50
 }
 
 .section1 i {
@@ -79,6 +83,7 @@ color: gold;
   transition: transform 2s;
   }
 }
+<<<<<<< HEAD
 /* 
 i{
   font-size: 50px;
@@ -88,6 +93,8 @@ i{
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+=======
+>>>>>>> 79d6a2dab39cf49bcd7cd6df41fc4cc3c5d44f50
 
 
 

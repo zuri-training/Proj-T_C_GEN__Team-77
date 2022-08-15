@@ -179,6 +179,7 @@ aside {
   }
   
   .thi{
+<<<<<<< HEAD
     display: flex;
     flex-direction: column;
   }
@@ -188,6 +189,21 @@ aside {
       position: absolute;
       left: 470px;
       top: 590px;
+=======
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+  }
+
+  .plu{
+      width: 5%;
+      /* position: absolute; */
+      /* left: 470px;
+      top: 590px; */
+      text-align: center;
+>>>>>>> 79d6a2dab39cf49bcd7cd6df41fc4cc3c5d44f50
   }
 
   
@@ -252,6 +268,12 @@ aside {
         display: block;
         
     }
+<<<<<<< HEAD
+=======
+    .und, .un {
+      display: none;
+    }
+>>>>>>> 79d6a2dab39cf49bcd7cd6df41fc4cc3c5d44f50
     
     aside {
         display: none;
@@ -321,7 +343,11 @@ aside {
       .pol{
         
         font-size: 23px;
+<<<<<<< HEAD
         white-space: pre;
+=======
+        /* white-space: pre; */
+>>>>>>> 79d6a2dab39cf49bcd7cd6df41fc4cc3c5d44f50
         line-height:normal;
       }
     
