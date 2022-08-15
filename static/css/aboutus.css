@@ -1,0 +1,18 @@
+p.fw-lighter{
+    color: #959BB0;
+}
+footer a{
+    text-decoration: none; 
+    color: #959BB0;
+}
+footer p{
+    color: #959BB0;
+}
+a{
+    text-decoration: none;
+}
+@media only screen and (max-width:700px) {
+    h3{
+        font-size: 16px;
+    }
+}
