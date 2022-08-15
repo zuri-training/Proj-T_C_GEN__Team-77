@@ -1,1 +1,1 @@
-web:gunicorn T_C_GEN.wsgi
+web: python manage.py runserver 0.0.0.0:\$PORT
