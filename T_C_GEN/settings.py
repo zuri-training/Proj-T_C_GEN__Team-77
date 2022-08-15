@@ -138,3 +138,5 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # django_heroku.settings(locals())
+import django_on_heroku
+django_on_heroku.settings(locals())
