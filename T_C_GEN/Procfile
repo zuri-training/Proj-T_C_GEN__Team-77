@@ -1,1 +1,1 @@
-web gunicorn qrCode_Project.wsgi:application --log-file -
+web:gunicorn T_C_GEN.wsgi
