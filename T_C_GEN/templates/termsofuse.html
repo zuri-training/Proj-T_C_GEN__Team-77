@@ -66,7 +66,7 @@
             <form class="form-inline ml-auto">
               <div class="container">
                 {% if user.is_authenticated %}
-                <p><a href="{% url 'logout' %}">logout</a></p>
+                <p><a href="{% url 'signout' %}">logout</a></p>
 
                 {% else %}
                 <a href="{% url 'signin' %}" class="btn">login</a>
@@ -86,8 +86,8 @@
     
   </nav>
 
-    <section class="container my-5 ">
-      <h2 class="text-center"><b>Terms77 Terms of Use</b> </h2>
+    <section class="container my-5 pt-5 ">
+      <h2 class="text-center "><b>Terms77 Terms of Use</b> </h2>
       <p>Last updated  June 2022</p>
       <p>General Terms
         By accessing and placing an order with Terms 77, you confirm that you are in agreement with and bound by
