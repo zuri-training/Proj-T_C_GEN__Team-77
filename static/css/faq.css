@@ -1,0 +1,16 @@
+main {
+  font-family: "Inter", sans-serif;
+}
+p.fw-lighter {
+  color: #959bb0;
+}
+footer a {
+  text-decoration: none;
+  color: #959bb0;
+}
+footer p {
+  color: #959bb0;
+}
+a {
+  text-decoration: none;
+}

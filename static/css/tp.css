@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
+body{
+    font-family: inter;
+}
+p.fw-lighter{
+    color: #c5c8d3;
+}
+footer a{
+    text-decoration: none; 
+    color: #c5c8d3;
+}
+footer p{
+    color: #c5c8d3;
+}
+a{
+    text-decoration: none;
+}
+@media only screen and (max-width:700px) {
+    h3{
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Terms77 - Sign In</title>
+    <link
+      href="{% static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/sign in.css' %}" />
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="logo">
+        <a href="{% url 'index' %}"><i class="fa fa-long-arrow-left"></i></a>
+        <img
+          src="{% static 'img/logo.png' %}"
+          class="img-logo"
+          alt=""
+          width="80px"
+          height="100px"
+        />
+      </div>
+
+      <aside>
+        <div class="svg">
+          <img src="{% static 'img/amico (2).jpg' %}" />
+        </div>
+
+        <!-- Form container -->
+        <div class="form-group">
+          <h2>Sign In</h2>
+          <div class="top-btn">
+            <button class="field-google">
+              <span>Sign In With Google </span>
+              <img
+                src="{% static 'img/google.img.png' %}"
+                alt=""
+                class="google-img"
+                width="13"
+              />
+            </button>
+            <div class="word-on-line">
+              <span>or Sign In With Your Email</span>
+            </div>
+          </div>
+
+          {% for message in messages %}
+          <h3 class="error-message">{{message}}</h3>
+          {% endfor %}
+
+          <form method="POST" action="signin">
+            {% csrf_token %}
+            <div class="input-field">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="JohnDoe@gmail.com"
+                class="input"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                class="password"
+              />
+              <i class="bx bx-hide eye-icon"></i>
+            </div>
+
+            <a href="{% url 'password_reset_form' %}">Forgot Password?</a>
+
+            <div class="button-field">
+              <input type="submit" class="btn1" value="Sign in" />
+            </div>
+
+            <p class="form-link">
+              Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
+  </body>
+</html>

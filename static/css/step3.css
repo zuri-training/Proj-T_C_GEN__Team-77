@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    max-width: 100%;
+}
+
+.wrapper3 {
+    display: flex;
+    width: 50%;
+    height: 620px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: poppin sans-serif;
+    font-size: 20px;
+}
+
+.asi{
+    height: auto;
+    margin: 0;
+}
+
+
+.top3 .close3 {
+    font-size: 25px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+
+.wrapper3 .sidebar3 {
+    position: fixed;
+    text-align: center;
+    width: 18%;
+    height: 100%;
+    background: #111F4D;
+}
+
+.at {
+    position: relative;
+    top: 80px;
+    text-decoration: none;
+    color: #D3D3D3;
+    font-size: 24px;
+}
+
+.at:hover {
+    color: #ffffff;
+}
+
+.as {
+    text-decoration: none;
+    color: #D3D3D3;
+    font-size: 24px;
+    position: relative;
+    top: 90px;
+}
+
+.as:hover {
+    color: #ffffff;
+}
+
+.an {
+    text-decoration: none;
+    color: #D3D3D3;
+    font-size: 24px;
+    position: relative;
+    top: 100px;
+}
+
+.an:hover {
+    color: #ffffff;
+}
+
+.ad {
+    text-decoration: none;
+    color: #D3D3D3;
+    font-size: 24px;
+    position: relative;
+    top: 110px;
+}
+
+.ad:hover {
+    color: #ffffff;
+}
+
+.wrapper3 .main-content3 .header3 {
+    padding: 30px;
+    color: #111F4D;
+    font-weight: 600;
+    font-size: 22px;
+    position: relative;
+    left: 270px;
+}
+
+.foo{
+    display: flex;
+    flex-direction: row;
+}
+
+form {
+    display: flex;
+    padding-left: 180px;
+    margin: 30px;
+    line-height: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    height: 42px;
+    width: 70%;
+    border-radius: 7px;
+    border: thin solid #80808075;
+    font-size: 15px;
+    padding: 20px;
+}
+
+.continue {
+    font-size: 18px;
+    background-color: #111F4D;
+    border-radius: 7px;
+    text-decoration: none;
+    padding: 7px 35px;
+    margin: 2px 5px;
+}
+
+.back {
+    font-size: 20px;
+    background-color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 2px solid green;
+    padding: 4px 37px;
+    margin: 2px 5px;
+}
+
+.img {
+    display: flex;
+    padding-left: 290px;
+    margin: 30px;
+    line-height: 30px;
+}
+
+.ready {
+    display: flex;
+    padding-left: 280px;
+    margin: 30px;
+}
+
+.button {
+    display: flex;
+    padding-left: 250px;
+    gap: 110px;
+}
+
+#newBack {
+    font-size: 20px;
+    background-color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 2px solid green;
+    padding: 5px 37px;
+    margin: 2px 5px;
+}
+
+#preview {
+    font-size: 20px;
+    background-color: #111F4D;
+    border-radius: 7px;
+    text-decoration: none;
+    padding: 5px 37px;
+    margin: 2px 5px;
+}
+
+#star {
+    color: saddlebrown;
+}
+
+
+.bars3, .close3 {
+    display: none;
+}
+
+@media (max-width: 784px) {
+
+    .fo{
+        display: grid;
+    }
+    
+    .asi{
+        display: none;
+        position: fixed;
+        z-index: 3;
+        height: auto;
+        margin-top: 0;
+        
+    }
+  
+    .wrapper3{
+      background: #D3D3D3;
+      height: 850px;
+    }
+  
+    .wrapper3 .sidebar3 {
+        width: 40%;
+        height: 50%;
+    }
+    
+    .bars3, .close3 {
+        display: block;
+    }
+  
+    .wrapper3 .main-content3 .header3{
+        display: flex;
+        position: relative;
+        left: 20px;
+    }
+  
+   
+    .bars3 {
+       margin-left: 10px; 
+    }
+  
+    .bars3 i {
+        font-size: 30px;
+    }
+    .wrapper3 .main-content3 .header3 {
+        font-size: 22px;
+    }
+   
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        height: 36px;
+        width: 90%;
+        padding: 10px;
+    }
+      
+    form {
+        padding-left: 30px;
+        margin: 10px;
+        line-height: 30px;
+    }
+   
+}
+
+
+
+@media screen and (max-width:400px) {
+    
+    
+    .foo{
+        display: grid;
+    }
+   
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        height: 25px;
+        width: 90%;
+        padding: 5px;
+    }
+      
+    form {
+        padding-left: 20px;
+        margin: 5px;
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+    .wrapper3{
+        background: #D3D3D3;
+        height: 900px;
+      }
+     
+}
