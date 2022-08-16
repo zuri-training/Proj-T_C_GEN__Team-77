@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/privacypolicynt.css' %}">
+    <script src="https://kit.fontawesome.com/c491194143.js" crossorigin="anonymous"></script>
+    <title>New Privacy Policy Questions</title>
+</head>
+
+<body>
+
+    <!--FMANUEL-->
+
+    <section>
+        <div class="container">
+            <aside>
+                <div class="top">
+                    <div class="logo" style="margin:auto;"><a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg' %}" alt=""></a></div>
+                    <div class="close"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <div class="sidebar">
+                    <ul>
+                        <li class="temp">
+                            <h4><a href="{% url 'dashboard' %}">Templates</a></h4>
+                        </li>
+                        <li class="set">
+                            <h4><a href="{% url 'settings' %}">Settings</a></h4>
+                        </li>
+                        <li class="logout">
+                            <h4><a href="{% url 'logout' %}">Logout</a></h4>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="main">
+                <div class="profile">
+                    <div class="bars"><i class="fa-solid fa-bars"></i></div>
+                    <div class="user">
+                        <div><i class="fa-regular fa-circle-user"></i></div>
+                        <div><span>{{user.username}}</span></div>
+                    </div>
+                </div>
+                <div class="account">
+
+                    <img class="add" src="{% static 'img/add terms & conditions (2).png' %}" alt="">
+                    <div class="text">A privacy policy describes how your website or app takes, uses and shares<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the personal information of visitors. Most websites and apps<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;have a privacy policy.</div>
+                    <a class="terms" onclick="openPopup()" href="#">NEW POLICY</a>
+                    <div>
+
+                        <!--RECTOR'S CODE-->
+
+                        <div class="wrapper" id="wrapper">
+                            <aside class="asid">
+                                <div class="top2">
+                                    <div class="close2"><i class="fa-solid fa-xmark"></i></div>
+                                </div>
+                                <div class="sidebar2">
+
+                                </div>
+                            </aside>
+
+                            <div class="main-content">
+                                <div class="header2">Privacy Policy</div>
+                                <div class="bars2"><i class="fa-solid fa-bars"></i></div>
+                                <form action="privacypolicynt" method="POST" id="nameform" class="form">
+                                    {% csrf_token %}
+                                    <div class="for">
+                                        <div class="question-a">
+                                            <div>
+                                                <label for="">Name of your Company<span id="star">*</span></label>
+                                                <input class="input-type" name="company_names" type="text" required
+                                                    placeholder="Chris Gift Ltd">
+                                            </div><br>
+                                            <div>
+                                                <label for="">Country<span id="star">*</span></label><br>
+                                                <input class="input-type" name="countrys" type="text" required
+                                                    placeholder="Canada">
+                                            </div><br>
+                                            <div>
+                                                <label for="">Company address<span id="star">*</span></label><br>
+                                                <input class="input-type" name="company_addresss" type="text" required
+                                                    placeholder="400 4 Ave Southwest Calgary, AB T2P 0J4 Canada">
+                                            </div><br>
+                                            <div>
+
+
+                                            </div><br>
+                                            <div>
+                                                <a href="{% url 'privacypolicynt' %}" class="back"
+                                                    style="color: #111F4D;">Back</a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Question B -->
+
+                                        <div class="question-b">
+                                            <div>
+                                                <label for="">Type of business/platform<span
+                                                        id="star">*</span></label><br>
+                                                <input class="input-type" name="business_platforms" type="text" required
+                                                    placeholder="Trading">
+                                            </div><br>
+                                            <div>
+                                                <label for=""> Type of product/service<span id="star">*</span></label>
+                                                <input class="input-type" name="product_services" type="text" required
+                                                    placeholder="Crypto">
+                                            </div><br>
+                                            <div>
+                                                <label for="">Website URL<span id="star">*</span></label>
+                                                <input class="input-type" type="text" name="company_websites" required
+                                                    placeholder="https://www.chrisgift.com">
+                                            </div><br><br>
+                                            <div>
+                                                <input type="submit" class="continue" style="color: white;"
+                                                    value="Continue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="{% static 'js/napp2.js' %}"></script>
+
+
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!--RECTOR'S CODE-->
+
+        <script>
+            let popup = document.getElementById("wrapper");
+
+            function openPopup() {
+                popup.classList.add("open-popup");
+            }
+        </script>
+        <footer>
+            <div class="footer">
+                <div><a href="{% url 'ourprivacypolicy' %}">Privacy Policy</a></div>
+                <div><a href="{% url 'termsofuse' %}">Terms of Use</a></div>
+            </div>
+        </footer>
+        </div>
+        </div>
+    </section>
+
+    <script src="{% static 'js/napp.js' %}"></script>
+</body>
+
+</html>
