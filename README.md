@@ -219,7 +219,7 @@ __Sangodare Sheriff__
 
 
 ## Relevant Links
-* Figma Designs - https://www.figma.com/file/6yoI3SiBYMV9IKHClcKfaR/Terms77?node-id=122%3A97
+* Figma Designs - [https://www.figma.com/file/6yoI3SiBYMV9IKHClcKfaR/Terms77?node-id=122%3A97](https://www.figma.com/file/6yoI3SiBYMV9IKHClcKfaR/Terms77)
 * General Team Documentation - https://docs.google.com/document/d/1rNTk2hPVpmEwFQ72HfpOX5MCvWxmNBBi-nhNH__ty3M/edit?usp=sharing
 * UX Research Documentation - https://docs.google.com/document/d/1hQmG6QUE6AhD26mdjcpxKYfhmF5aPH0T7TcFCUvmVUo/edit?usp=sharing
 * Contributors Details and Tasks - https://docs.google.com/spreadsheets/d/1jy5eBHxAlEFR83tw7ZPI8p9LHv-5oEpz8sIjo--eKfc/edit?usp=sharing
