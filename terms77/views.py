@@ -6,7 +6,7 @@ from .models import companies, policies
 from django.db import models
 from django.conf import settings
 from .forms import Update, Updates
-
+from django.contrib.auth import authenticate, login
 
 from django.contrib.auth.decorators import login_required
 
@@ -21,14 +21,14 @@ def index(request):
 def signup(request):
     if request.method == "POST":
         username = request.POST["username"]
-        fullname = request.POST["fullname"]
+        # fullname = request.POST["fullname"]
         email = request.POST["email"]
         password = request.POST["password"]
         password2 = request.POST["password2"]
 
         if password == password2:
-            if User.objects.filter(email=email).exists():
-                messages.info(request, "Email Already In Use")
+            if User.objects.filter(username=username).exists():
+                messages.info(request, "Username Already In Use")
                 return redirect("signup")
             else:
                 user = User.objects.create_user(
@@ -63,14 +63,14 @@ class EmailBackend(object):
 
 def signin(request):
     if request.method == "POST":
-        email = request.POST["email"]
+        username = request.POST["email"]
         password = request.POST["password"]
 
-        user = auth.authenticate(username=email, password=password)
+        user = authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request, user)
-            return redirect("/")
+            login(request, user)
+            return redirect("dashboard")
         else:
             messages.info(request, "Invalid Credentials")
             return redirect("signin")

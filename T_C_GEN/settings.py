@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-kd=t@7r2#8w9uyw$xa(@9(_sryq1lr!_bmm8a%6wqo6y6r6&g+'
+SECRET_KEY = 'django-insecure-kd=t@7r2#8w9uyw$xa(@9(_sryq1lr!_bmm8a%6wqo6y6r6&g+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,10 +79,18 @@ WSGI_APPLICATION = 'T_C_GEN.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1b15vj92p9eg1',
+        'USER': 'iwjazeypvxkjki',
+        'PASSWORD': '6103096e1f6a4faf7c808caa86aa66abbb57d1a0de15d7c91a3ceeb4a01bbf2f',
+        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+import dj_database_url
+database_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(database_from_env)
+
 
 
 # Password validation
@@ -132,11 +140,11 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-AUTHENTICATION_BACKENDS = [
-    'terms77.views.EmailBackend'
-]
+# AUTHENTICATION_BACKENDS = [
+#     'terms77.views.EmailBackend'
+# ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # django_heroku.settings(locals())
 import django_on_heroku

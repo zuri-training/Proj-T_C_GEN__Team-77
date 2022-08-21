@@ -63,7 +63,7 @@
 
           <form method="POST" action="signup">
             {% csrf_token %}
-            <div class="input-field">
+            {% comment %} <div class="input-field">
               <label for="fullame" class="form-label">Full Name</label>
               <input
                 type="text"
@@ -71,7 +71,7 @@
                 placeholder="John Doe"
                 class="input"
               />
-            </div>
+            </div> {% endcomment %}
 
             <div class="input-field">
               <label for="Username" class="form-label"> Username </label>
